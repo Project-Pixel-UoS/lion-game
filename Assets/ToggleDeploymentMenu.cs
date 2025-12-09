@@ -3,11 +3,11 @@ using UnityEngine;
 public class ToggleDeploymentMenu : MonoBehaviour
 {
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject placementPromptPanel;
 
-    // Call this from a button, key press, etc.
     public void ToggleMenu()
     {
-        if (menuPanel == null)
+        if (menuPanel == null || placementPromptPanel == null)
         {
             Debug.LogWarning("MenuToggle: No menuPanel assigned.");
             return;
@@ -15,5 +15,6 @@ public class ToggleDeploymentMenu : MonoBehaviour
 
         // Switch active state
         menuPanel.SetActive(!menuPanel.activeSelf);
+        placementPromptPanel.SetActive(!placementPromptPanel.activeSelf);
     }
 }
