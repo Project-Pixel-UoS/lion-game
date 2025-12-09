@@ -376,6 +376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5684025366941268223, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
+      propertyPath: objectToToggle
+      value: 
+      objectReference: {fileID: 1756694664}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -482,6 +486,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5684025366941268223, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
+      propertyPath: objectToToggle
+      value: 
+      objectReference: {fileID: 1756694664}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -835,6 +843,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5684025366941268223, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
+      propertyPath: objectToToggle
+      value: 
+      objectReference: {fileID: 1756694664}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -941,6 +953,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5684025366941268223, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
+      propertyPath: objectToToggle
+      value: 
+      objectReference: {fileID: 1756694664}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1258,6 +1274,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5684025366941268223, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
+      propertyPath: objectToToggle
+      value: 
+      objectReference: {fileID: 1756694664}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1830,6 +1850,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5684025366941268223, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
+      propertyPath: objectToToggle
+      value: 
+      objectReference: {fileID: 1756694664}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
