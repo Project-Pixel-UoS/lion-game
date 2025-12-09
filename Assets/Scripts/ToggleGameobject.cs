@@ -4,7 +4,7 @@ public class ToggleGameobject : MonoBehaviour
 {
     [SerializeField] private GameObject objectToToggle;
 
-    public void ToggleObject()
+    public void ToggleGameobject()
     {
         if (objectToToggle == null)
         {
@@ -16,4 +16,3 @@ public class ToggleGameobject : MonoBehaviour
         objectToToggle.SetActive(!objectToToggle.activeSelf);
     }
 }
-

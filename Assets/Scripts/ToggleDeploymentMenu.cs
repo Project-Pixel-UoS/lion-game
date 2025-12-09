@@ -15,16 +15,4 @@ public class ToggleDeploymentMenu : MonoBehaviour
         // Switch active state
         menuPanel.SetActive(!menuPanel.activeSelf);
     }
-
-    public void ToggleMenu()
-    {
-        if (menuPanel == null)
-        {
-            Debug.LogWarning("MenuToggle: No menuPanel assigned.");
-            return;
-        }
-
-        // Switch active state
-        menuPanel.SetActive(!menuPanel.activeSelf);
-    }
 }
