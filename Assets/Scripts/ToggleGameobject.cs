@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class ToggleGameobject : MonoBehaviour
 {
-    [SerializeField] private GameObject objectToToggle;
-
-    public void ToggleGameobject()
+    public void ToggleObject(GameObject objectToToggle)
     {
         if (objectToToggle == null)
         {
