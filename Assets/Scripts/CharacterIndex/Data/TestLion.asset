@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c29e3505edb7184f85617ea38f8f3e7, type: 3}
   m_Name: TestLion
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Regular Lion
   characterSprite: {fileID: 0}
-  toughness: 
-  description: 
+  toughness: Low
+  description: This lion can only moves left and right.
   characterType: 0
