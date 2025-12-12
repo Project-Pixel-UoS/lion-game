@@ -15,7 +15,7 @@ public class CharacterData : ScriptableObject
     public Sprite characterSprite;
 
     [Header("Stats")]
-    public string toughness;
+    public string toughness; // To be confirmed for both enemy and lion
 
     [Header("Description")]
     [TextArea(3, 10)]
