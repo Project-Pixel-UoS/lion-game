@@ -45,6 +45,19 @@ public class CharacterIndexManager : MonoBehaviour
         // Update title
         titleText.text = category == CharacterType.Lion ? "Lion Index" : "Enemy Index";
 
+        // Update button visibility, shows opposite button only
+        if (category == CharacterType.Lion)
+        {
+            lionButton.gameObject.SetActive(false);
+            enemyButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            lionButton.gameObject.SetActive(true);
+            enemyButton.gameObject.SetActive(false);
+
+        }
+
         // Clear existing cards
         ClearCards();
 
