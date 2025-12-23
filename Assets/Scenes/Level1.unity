@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &119382575
@@ -482,7 +481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &264145682
@@ -654,7 +652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &465373451
@@ -701,7 +698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &473160665
@@ -748,7 +744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &1174888377
@@ -763,6 +758,8 @@ GameObject:
   - component: {fileID: 1174888380}
   - component: {fileID: 1174888379}
   - component: {fileID: 1174888378}
+  - component: {fileID: 1174888383}
+  - component: {fileID: 1174888382}
   m_Layer: 0
   m_Name: Enemy Asset
   m_TagString: Untagged
@@ -913,6 +910,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1174888382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174888377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca1f105b853051409336c70b0afeace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &1174888383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174888377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  wateringHole: {fileID: 2093186993}
 --- !u!1 &1485517013
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &1716849018
@@ -1004,7 +1027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &1758431569
@@ -1141,7 +1163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &1865776133
@@ -1188,7 +1209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &1872779315
@@ -1235,7 +1255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &1957535048
@@ -1282,7 +1301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &1965102736
@@ -1329,7 +1347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1174888377}
   speed: 20
   wateringHole: {fileID: 2093186993}
 --- !u!1 &2093186993

@@ -3,7 +3,7 @@ using System;
 
 public class EnemyCollisionScript : MonoBehaviour
 {
-    public GameObject enemy;
+    private Rigidbody2D rb; // Rigidbody2D of the enemy object
     public float speed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
