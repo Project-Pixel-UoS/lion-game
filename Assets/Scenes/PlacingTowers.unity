@@ -337,6 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47be61d2bf0d340a01a5504dc0c18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedLion: {fileID: 0}
+  isPlacing: 0
 --- !u!4 &303679233
 Transform:
   m_ObjectHideFlags: 0

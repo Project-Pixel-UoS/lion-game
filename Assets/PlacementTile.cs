@@ -31,11 +31,7 @@ public class PlacementTile : MonoBehaviour
         if (occupied) return;
         if (testVisual == null) return;
 
-        Instantiate(
-            testVisual,
-            transform.position,
-            Quaternion.identity
-        );
+        PlacementManager.Instance.Place(this);
 
         occupied = true;
     }
