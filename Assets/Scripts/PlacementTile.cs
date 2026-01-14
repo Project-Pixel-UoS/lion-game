@@ -27,12 +27,9 @@ public class PlacementTile : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Tile clicked");
         if (occupied) return;
         if (testVisual == null) return;
 
         PlacementManager.Instance.Place(this);
-
-        occupied = true;
     }
 }

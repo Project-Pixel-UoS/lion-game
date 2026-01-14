@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1631830186535394680}
   - component: {fileID: 3059592852056127429}
   - component: {fileID: 5684025366941268223}
+  - component: {fileID: 4064811333940143666}
   m_Layer: 5
   m_Name: DeployLionButton
   m_TagString: Untagged
@@ -147,6 +148,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4064811333940143666}
+        m_TargetAssemblyTypeName: DeployLionButton, Assembly-CSharp
+        m_MethodName: SelectLion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5684025366941268223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +172,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66daf3dde955fc4895274d9c2b2cfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4064811333940143666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800629011751283846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ce47d7ccdf63a4a87ec8f05ff44dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lionPrefab: {fileID: 0}
 --- !u!1 &1236692008004445850
 GameObject:
   m_ObjectHideFlags: 0
