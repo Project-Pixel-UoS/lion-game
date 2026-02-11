@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Manages the character index grid, spawning character cards dynamically.
@@ -98,5 +99,13 @@ public class CharacterIndexManager : MonoBehaviour
                 card.Setup(character, detailPanel);
             }
         }
+    }
+
+    /// <summary>
+    /// Exits to main menu
+    /// </summary>
+    public void ExitToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
