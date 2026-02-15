@@ -160,11 +160,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 56787954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &119382575
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,11 +479,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 198812739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &264145682
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,11 +651,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 398572380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &465373451
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,11 +698,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 465373451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &473160665
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,11 +745,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 473160665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &1174888377
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,11 +983,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485517013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &1716849018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,11 +1030,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716849018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &1758431569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,11 +1167,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1806887393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &1865776133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,11 +1214,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1865776133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &1872779315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,11 +1261,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872779315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &1957535048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,11 +1308,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1957535048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &1965102736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,11 +1355,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1965102736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
+  m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  wateringHole: {fileID: 2093186993}
+  enemyPrefab: {fileID: 1174888377}
+  minSpawnTime: 1
+  maxSpawnTime: 4
 --- !u!1 &2093186993
 GameObject:
   m_ObjectHideFlags: 0
