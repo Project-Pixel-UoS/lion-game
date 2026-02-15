@@ -4,8 +4,8 @@ public class EnemySpawnScript : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
-    public float minSpawnTime;
-    public float maxSpawnTime;
+    private float minSpawnTime = 4f;
+    private float maxSpawnTime = 12f;
 
     private float timer;
     private float nextSpawnTime;
@@ -19,6 +19,11 @@ public class EnemySpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyPrefab == null)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
 
         if (timer >= nextSpawnTime)
