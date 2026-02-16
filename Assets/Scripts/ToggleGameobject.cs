@@ -1,5 +1,13 @@
 using UnityEngine;
 
+/// <summary>
+/// Allows any Gameobject to be toggled on/off with this function
+/// </summary>
+/// <remarks>
+/// Maintained by: Michael Edems-Eze
+/// </remarks>
+
+
 public class ToggleGameobject : MonoBehaviour
 {
     public void ToggleObject(GameObject objectToToggle)

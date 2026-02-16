@@ -1,5 +1,12 @@
 using UnityEngine;
 
+/// <summary>
+/// Toggles the Deployment Menu
+/// </summary>
+/// <remarks>
+/// Maintained by: Michael Edems-Eze
+/// </remarks>
+
 public class ToggleDeploymentMenu : MonoBehaviour
 {
     [SerializeField] private GameObject menuPanel;
