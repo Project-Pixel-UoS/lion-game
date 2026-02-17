@@ -318,6 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303679233}
   - component: {fileID: 303679232}
+  - component: {fileID: 303679234}
   m_Layer: 0
   m_Name: PlacementManager
   m_TagString: Untagged
@@ -338,6 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLion: {fileID: 0}
+  placementPromptPanel: {fileID: 1756694664}
+  cancelButton: {fileID: 896614352}
   isPlacing: 0
 --- !u!4 &303679233
 Transform:
@@ -354,6 +357,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &303679234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303679231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66daf3dde955fc4895274d9c2b2cfad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &469749930
 PrefabInstance:
   m_ObjectHideFlags: 0

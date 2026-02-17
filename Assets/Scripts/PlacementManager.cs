@@ -16,6 +16,9 @@ public class PlacementManager : MonoBehaviour
     //Stores the Gameobject of Lion selected
     public GameObject selectedLion; 
 
+    [SerializeField] private GameObject placementPromptPanel; //Stores the Placement Prompt Panel Gameobject so that it can be toggled on/off
+    [SerializeField] private GameObject cancelButton; //Stores the Cancel Button Gameobject so that it can be toggled on/off
+
     //Is TRUE if the player is deciding which tile to place a lion
     public bool isPlacing; 
 
@@ -45,6 +48,9 @@ public class PlacementManager : MonoBehaviour
         //Spawn the stored Gameobject at the tile's position
         Instantiate(selectedLion, tile.transform.position, Quaternion.identity);
         tile.occupied = true;
+
+        placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion
+        cancelButton.SetActive(false); //Close the Cancel Button after placing a lion
 
         //Call the Cancel Function so that only one Lion can be placed at a time
         Cancel(); 
