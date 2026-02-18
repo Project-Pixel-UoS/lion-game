@@ -164,8 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &119382575
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,8 +481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &264145682
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,8 +651,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &465373451
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,8 +696,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &473160665
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,8 +741,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &1174888377
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +757,7 @@ GameObject:
   - component: {fileID: 1174888382}
   m_Layer: 0
   m_Name: Enemy Asset
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -987,8 +977,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &1716849018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,8 +1022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &1758431569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,8 +1157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &1865776133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,8 +1202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &1872779315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,8 +1247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &1957535048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,8 +1292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &1965102736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,8 +1337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1174888377}
-  minSpawnTime: 1
-  maxSpawnTime: 4
 --- !u!1 &2093186993
 GameObject:
   m_ObjectHideFlags: 0
