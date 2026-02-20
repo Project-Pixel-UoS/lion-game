@@ -10,7 +10,7 @@ using UnityEngine;
 /// </remarks>
 
 
-public class GameStatsManager : Monobehaviour
+public class GameStatsManager : MonoBehaviour
 {
     public static GameStatsManager Instance { get; private set; }
     public int EnemiesKilled { get; private set; }
@@ -22,7 +22,7 @@ public class GameStatsManager : Monobehaviour
     /// <summary>
     /// Ensures only one instance exists and persists across scenes.
     /// </summary>
-    private voide Awake()
+    private void Awake()
     {
         if (Instance != null && Instance != this)
         {
