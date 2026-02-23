@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8800449923111488941}
   - component: {fileID: 6535651987042723786}
+  - component: {fileID: 5597118704931804804}
   m_Layer: 0
   m_Name: Basic Lion
   m_TagString: Untagged
@@ -87,3 +88,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5597118704931804804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148432056765847449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c86370e24dbf304d9e4f54c4d60bd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 6.1
+  coneAngle: 60
+  rayCount: 10
