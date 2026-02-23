@@ -6,7 +6,7 @@ public class RoarProjectileBehaviour : MonoBehaviour
     private float timeAlive = 0f;
 
     public Rigidbody2D rb; // Reference to the Rigidbody2D component
-    public float speed = 1f; // Speed of the projectile
+    public float speed = 3f; // Speed of the projectile
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +22,15 @@ public class RoarProjectileBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
             // Optionally, you can add effects or logic here when the projectile expires
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+                // Implement logic for when the projectile hits an enemy, e.g., apply damage
+            Destroy(gameObject); // Destroy the projectile on impact
         }
     }
 }

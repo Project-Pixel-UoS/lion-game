@@ -100,6 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c86370e24dbf304d9e4f54c4d60bd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 6.1
-  coneAngle: 60
-  rayCount: 10
+  maxDistance: 6
+  coneAngle: 36.4
+  rayCount: 20
+  attackDamage: 1
+  rechargeTime: 3
+  roarProjectilePrefab: {fileID: 612404576898284485, guid: 2629c8989598ca2489e3f27d34a78840, type: 3}
+  projectileSpawnOffset: {x: 0, y: 0.69}

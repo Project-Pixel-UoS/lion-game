@@ -12,6 +12,8 @@ public class LionAttackBehaviour : MonoBehaviour
     public float rechargeTime = 1f;
     private float lastAttackTime = 0f;
 
+    public GameObject roarProjectilePrefab; // Reference to the projectile prefab
+    public Vector2 projectileSpawnOffset; // Offset from where the projectile will be spawned
 
     void Update()
     {
@@ -55,6 +57,8 @@ public class LionAttackBehaviour : MonoBehaviour
             // Implement attack logic here, e.g., apply damage to enemies in the cone
             Debug.Log("Attacking with damage: " + attackDamage);
             lastAttackTime = 0f; // Reset attack timer
+
+            Instantiate(roarProjectilePrefab, (Vector2)transform.position + projectileSpawnOffset, transform.rotation);
         }
     }
 
@@ -64,6 +68,8 @@ public class LionAttackBehaviour : MonoBehaviour
         {
             return; // Only draw gizmos in edit mode
         }
+
+        Gizmos.DrawSphere(transform.position + (Vector3)projectileSpawnOffset, 0.2f); // Draw a small sphere at the position of the GameObject
 
         float startAngle = -coneAngle / 2f;
         float angleStep = coneAngle / (rayCount - 1);
