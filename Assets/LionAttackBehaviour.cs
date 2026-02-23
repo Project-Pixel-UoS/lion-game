@@ -33,10 +33,14 @@ public class LionAttackBehaviour : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     Debug.Log("Enemy detected!");
-                }
+                    Debug.DrawRay(transform.position, direction * hit.distance, Color.green);
+                }                
+            }
+            else {
+                Debug.DrawRay(transform.position, direction * maxDistance, Color.red);
             }
 
-            Debug.DrawRay(transform.position, direction * maxDistance, Color.red);
+            
         }
     }
 
