@@ -38,14 +38,13 @@ public class LionAttackBehaviour : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     DoRoarAttack();
-                    Debug.DrawRay(transform.position, direction * hit.distance, Color.green);
+                    Debug.DrawRay(transform.position, hit.point, Color.green);
                 }                
             }
             else {
                 Debug.DrawRay(transform.position, direction * maxDistance, Color.red);
             }
 
-            
         }
     }
 
@@ -61,6 +60,11 @@ public class LionAttackBehaviour : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (Application.isPlaying)
+        {
+            return; // Only draw gizmos in edit mode
+        }
+
         float startAngle = -coneAngle / 2f;
         float angleStep = coneAngle / (rayCount - 1);
 
