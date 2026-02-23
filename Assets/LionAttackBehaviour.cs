@@ -7,9 +7,16 @@ public class LionAttackBehaviour : MonoBehaviour
     public float coneAngle = 60f;   // total angle
     public int rayCount = 20;
 
+    //Lion Attack Parameters
+    public float attackDamage = 1f;
+    public float rechargeTime = 1f;
+    private float lastAttackTime = 0f;
+
+
     void Update()
     {
         CastCone();
+        lastAttackTime += Time.deltaTime;
     }
 
     void CastCone()
@@ -20,19 +27,17 @@ public class LionAttackBehaviour : MonoBehaviour
         for (int i = 0; i < rayCount; i++)
         {
             float currentAngle = startAngle + (angleStep * i);
-            Debug.Log("Current Angle: " + currentAngle);
 
             // Rotate forward direction
             Vector3 direction = Quaternion.Euler(0, 0, currentAngle) * transform.up;
 
-            Ray ray = new Ray(transform.position, direction);
-            RaycastHit hit;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxDistance);
 
-            if (Physics.Raycast(ray, out hit, maxDistance))
+            if (hit.collider != null)
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    Debug.Log("Enemy detected!");
+                    DoRoarAttack();
                     Debug.DrawRay(transform.position, direction * hit.distance, Color.green);
                 }                
             }
@@ -41,6 +46,16 @@ public class LionAttackBehaviour : MonoBehaviour
             }
 
             
+        }
+    }
+
+    void DoRoarAttack()
+    {
+        if (lastAttackTime >= rechargeTime)
+        {
+            // Implement attack logic here, e.g., apply damage to enemies in the cone
+            Debug.Log("Attacking with damage: " + attackDamage);
+            lastAttackTime = 0f; // Reset attack timer
         }
     }
 
