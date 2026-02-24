@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 325919265991881075}
   - component: {fileID: 8378500812262924332}
   - component: {fileID: 1459079546109911151}
+  - component: {fileID: 2374869201980820903}
   m_Layer: 0
   m_Name: LionPlacementSpot
   m_TagString: Untagged
@@ -152,3 +153,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.15693994, y: 0.16902679}
   m_EdgeRadius: 0
+--- !u!114 &2374869201980820903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565557521932392754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5992d2e748a26e14488a49f084a33176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
