@@ -30,6 +30,7 @@ public class RoarProjectileBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
                 // Implement logic for when the projectile hits an enemy, e.g., apply damage
+            Destroy(collision.gameObject); // Destroy the enemy on impact
             Destroy(gameObject); // Destroy the projectile on impact
         }
     }
