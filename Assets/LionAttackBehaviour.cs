@@ -8,7 +8,7 @@ public class LionAttackBehaviour : MonoBehaviour
     public int rayCount = 20;
 
     //Lion Attack Parameters
-    public float attackDamage = 1f;
+    public int attackDamage = 1; // Base damage of the lion's attack, can be adjusted in the Unity Inspector
     public float rechargeTime = 1f;
     private float lastAttackTime = 0f;
 
@@ -58,7 +58,12 @@ public class LionAttackBehaviour : MonoBehaviour
             Debug.Log("Attacking with damage: " + attackDamage);
             lastAttackTime = 0f; // Reset attack timer
 
-            Instantiate(roarProjectilePrefab, (Vector2)transform.position + projectileSpawnOffset, Quaternion.Euler(0, 0, attackAngle));
+            GameObject projectile = Instantiate(roarProjectilePrefab, (Vector2)transform.position + projectileSpawnOffset, Quaternion.Euler(0, 0, attackAngle));
+            RoarProjectileBehaviour projectileBehaviour = projectile.GetComponent<RoarProjectileBehaviour>();
+            if (projectileBehaviour != null)
+            {
+                projectileBehaviour.SetDamage(attackDamage); // Set the damage for the projectile using Lion Data
+            }
         }
     }
 

@@ -8,6 +8,8 @@ public class RoarProjectileBehaviour : MonoBehaviour
     public Rigidbody2D rb; // Reference to the Rigidbody2D component
     public float speed = 3f; // Speed of the projectile
 
+    public int damage = 1; // Damage dealt to enemies on impact
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,12 +27,20 @@ public class RoarProjectileBehaviour : MonoBehaviour
         }
     }
 
+    public void SetDamage(int damageAmount)
+    {
+        damage = damageAmount; // Set the damage amount for the projectile
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-                // Implement logic for when the projectile hits an enemy, e.g., apply damage
-            Destroy(collision.gameObject); // Destroy the enemy on impact
+            // Implement logic for when the projectile hits an enemy, e.g., apply damage
+            if (collision.gameObject.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth))
+            {
+                enemyHealth.LoseHealth(damage); // Apply damage to the enemy
+            }
             Destroy(gameObject); // Destroy the projectile on impact
         }
     }

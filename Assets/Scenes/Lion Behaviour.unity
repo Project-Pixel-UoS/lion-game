@@ -857,6 +857,10 @@ PrefabInstance:
       value: Basic Lion (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5597118704931804804, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
+      propertyPath: projectileSpawnOffset.x
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597118704931804804, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
       propertyPath: projectileSpawnOffset.y
       value: 0
       objectReference: {fileID: 0}
@@ -919,6 +923,7 @@ GameObject:
   - component: {fileID: 1174888378}
   - component: {fileID: 1174888383}
   - component: {fileID: 1174888382}
+  - component: {fileID: 1174888384}
   m_Layer: 0
   m_Name: Enemy Asset
   m_TagString: Enemy
@@ -1096,6 +1101,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   wateringHole: {fileID: 2093186993}
+--- !u!114 &1174888384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174888377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8948ec79be16955458540ea5d3c725dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
 --- !u!1 &1485517013
 GameObject:
   m_ObjectHideFlags: 0
