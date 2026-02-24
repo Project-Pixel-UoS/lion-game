@@ -39,7 +39,7 @@ public class LionAttackBehaviour : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    DoRoarAttack();
+                    DoRoarAttack(Vector2.SignedAngle(Vector2.up, hit.point - (Vector2)transform.position));
                     Debug.DrawRay(transform.position, hit.point, Color.green);
                 }                
             }
@@ -50,7 +50,7 @@ public class LionAttackBehaviour : MonoBehaviour
         }
     }
 
-    void DoRoarAttack()
+    void DoRoarAttack(float attackAngle)
     {
         if (lastAttackTime >= rechargeTime)
         {
@@ -58,7 +58,7 @@ public class LionAttackBehaviour : MonoBehaviour
             Debug.Log("Attacking with damage: " + attackDamage);
             lastAttackTime = 0f; // Reset attack timer
 
-            Instantiate(roarProjectilePrefab, (Vector2)transform.position + projectileSpawnOffset, transform.rotation);
+            Instantiate(roarProjectilePrefab, (Vector2)transform.position + projectileSpawnOffset, Quaternion.Euler(0, 0, attackAngle));
         }
     }
 
