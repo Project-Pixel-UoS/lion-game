@@ -5,6 +5,7 @@ public class EnemyMovementScript : MonoBehaviour
     public float speed = 1f;
     public GameObject wateringHole;
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
+    public int health = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

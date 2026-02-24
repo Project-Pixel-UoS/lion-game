@@ -4,12 +4,11 @@ using System;
 public class EnemyCollisionScript : MonoBehaviour
 {
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
-    public float speed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = 1f;
+        
     }
 
     // Update is called once per frame
