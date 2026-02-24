@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
 
             while (activeEnemies > 0)
             {
-                continue;
+                await Awaitable.NextFrameAsync();
             }
 
             await Awaitable.WaitForSecondsAsync(allWaves[currentWaveIndex].timeBeforeNextWave);
