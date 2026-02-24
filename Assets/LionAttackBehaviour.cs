@@ -15,6 +15,8 @@ public class LionAttackBehaviour : MonoBehaviour
     public GameObject roarProjectilePrefab; // Reference to the projectile prefab
     public Vector2 projectileSpawnOffset; // Offset from where the projectile will be spawned
 
+    public int ammunition = 10; // Amount of ammunition the lion has for its attack, can be adjusted in the Unity Inspector
+
     void Update()
     {
         CastCone();
@@ -52,11 +54,12 @@ public class LionAttackBehaviour : MonoBehaviour
 
     void DoRoarAttack(float attackAngle)
     {
-        if (lastAttackTime >= rechargeTime)
+        if (lastAttackTime >= rechargeTime && ammunition > 0)
         {
             // Implement attack logic here, e.g., apply damage to enemies in the cone
             Debug.Log("Attacking with damage: " + attackDamage);
             lastAttackTime = 0f; // Reset attack timer
+            ammunition--; // Decrease ammunition count
 
             GameObject projectile = Instantiate(roarProjectilePrefab, (Vector2)transform.position + projectileSpawnOffset, Quaternion.Euler(0, 0, attackAngle));
             RoarProjectileBehaviour projectileBehaviour = projectile.GetComponent<RoarProjectileBehaviour>();

@@ -856,14 +856,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Lion (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5597118704931804804, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
-      propertyPath: projectileSpawnOffset.x
-      value: -0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597118704931804804, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
-      propertyPath: projectileSpawnOffset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8800449923111488941, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4
