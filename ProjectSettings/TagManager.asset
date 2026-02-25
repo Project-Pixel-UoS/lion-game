@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Crown_Enemy
+  - Watering_Hole
   layers:
   - Default
   - TransparentFX

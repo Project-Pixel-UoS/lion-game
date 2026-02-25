@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyMovementScript : MonoBehaviour
 {
     public float speed = 1f;
-    public GameObject wateringHole;
+    GameObject wateringHole;
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
     public int health = 1;
 
@@ -11,6 +11,7 @@ public class EnemyMovementScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        wateringHole = GameObject.FindWithTag("Watering_Hole");
     }
 
     // Update is called once per frame
