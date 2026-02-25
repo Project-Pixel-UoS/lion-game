@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 8800449923111488941}
   - component: {fileID: 6535651987042723786}
   - component: {fileID: 5597118704931804804}
+  - component: {fileID: 4070051645571815608}
   m_Layer: 0
   m_Name: Basic Lion
   m_TagString: Untagged
@@ -363,6 +364,21 @@ MonoBehaviour:
   roarProjectilePrefab: {fileID: 612404576898284485, guid: 2629c8989598ca2489e3f27d34a78840, type: 3}
   projectileSpawnOffset: {x: 0, y: 0}
   ammunition: 20
+--- !u!114 &4070051645571815608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148432056765847449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d47db242def244bb5120e3f701c954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 5
+  currentHealth: 0
 --- !u!1 &6621853650924837467
 GameObject:
   m_ObjectHideFlags: 0
