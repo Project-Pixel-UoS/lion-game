@@ -10,12 +10,16 @@ public class HealthBarBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentHealth = maxHealth; // Initialize current health to max health
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // For testing purposes, decrease health when the space key is pressed
+        if (Input.GetMouseButtonDown(0)) // Left mouse button click
+        {
+            LoseHealth(1f); // Decrease health by 1
+        }
     }
 
     void LoseHealth(float damage)
