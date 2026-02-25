@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelCell : MonoBehaviour
 {
@@ -24,6 +25,12 @@ public class LevelCell : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Level " + levelIndex + " clicked!");
+        if (levelIndex > 1) {
+            Debug.Log("Level " + levelIndex + " clicked!");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level" + levelIndex);
+        }
     }
 }
