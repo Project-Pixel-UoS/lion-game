@@ -57,6 +57,7 @@ public class PlacementTile : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("Tile clicked!");
         // Do nothing if tile is already occupied
         if (occupied) return;
 
