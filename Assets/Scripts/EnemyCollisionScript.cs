@@ -27,12 +27,13 @@ public class EnemyCollisionScript : MonoBehaviour
     /// </todo>
     /// <remarks>
     /// Maintained by: Rehan Fernando
+    /// Updated By: Michael Edems-Eze
     /// </remarks>
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            // Instead of destroying the enemy, make it run away
         }
     }
 

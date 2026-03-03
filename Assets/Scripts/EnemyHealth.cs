@@ -1,32 +1,22 @@
-using System;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
+    public int health = 1; // Initial health of the enemy, can be adjusted in the Unity Inspector
 
     public Action OnDeath;
-
-    private void Start()
+    
+    public void LoseHealth(int damage)
     {
-        currentHealth = maxHealth;
-    }
-
-    public void TakeDamage(float amount)
-    {
-        currentHealth -= amount;
-
-        if (currentHealth < 0)
+        health -= damage; // Reduce health by the damage amount
+        if (health <= 0)
         {
             Die();
         }
     }
 
-    public void Die()
-    {
+    public void Die() {
         OnDeath?.Invoke();
-
         Destroy(gameObject);
     }
 }
