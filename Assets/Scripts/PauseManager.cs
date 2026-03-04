@@ -11,7 +11,7 @@ public class PauseManager : MonoBehaviour
     void Start()
     {
         // Make the pause menu invisible to begin with
-        SetPaused(false);
+        isPaused = false;
     }
 
     void Update()
@@ -31,7 +31,6 @@ public class PauseManager : MonoBehaviour
     private void SetPaused(bool paused)
     {
         isPaused = paused;
-
         if (pauseUI) pauseUI.SetActive(paused);
 
         // Code goes here for pausing the gameplay.
