@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class WaveManager : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class WaveManager : MonoBehaviour
 
             currentWaveIndex++;
         }
+        Debug.Log("Level Complete");
     }
 
     async Task SpawnWave(WaveData wave)
@@ -46,7 +48,7 @@ public class WaveManager : MonoBehaviour
             GameObject enemy = Instantiate(info.enemyPrefab, spawnPoint.position, Quaternion.identity);
             activeEnemies++;
 
-            enemy.GetComponent<EnemyHealth>().OnDeath += () => activeEnemies--;
+            enemy.GetComponent<HealthBarBehaviour>().OnDeath += () => activeEnemies--;
 
             await Awaitable.WaitForSecondsAsync(info.spawnRate);
         }
