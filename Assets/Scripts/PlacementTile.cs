@@ -31,6 +31,8 @@ public class PlacementTile : MonoBehaviour
     // Optional visual object used to preview placement
     public GameObject testVisual;
 
+    [SerializeField] private Collider2D tileCollider; // Collider for detecting clicks
+    
     void Start()
     {
         // If no SpriteRenderer is assigned in the Inspector,
@@ -42,6 +44,11 @@ public class PlacementTile : MonoBehaviour
 
         // Set the initial color of the tile
         sr.color = normal; 
+
+        tileCollider = GetComponent<Collider2D>();
+        if (tileCollider == null) {
+            Debug.LogWarning("PlacementTile: No Collider2D found on the tile. Click detection will not work.");
+        }
     }
 
     void Update()
@@ -53,15 +60,22 @@ public class PlacementTile : MonoBehaviour
         // Green = available
         // Black = occupied
         sr.color = canPlace ? highlight : normal;
+
+        if (!occupied) {
+            tileCollider.enabled = true; // Enable collider if tile is available
+        }
     }
 
     void OnMouseDown()
     {
+        Debug.Log("Tile clicked!");
         // Do nothing if tile is already occupied
         if (occupied) return;
 
         // Do nothing if there is no object assigned to place
         if (testVisual == null) return;
+
+        tileCollider.enabled = false; // Disable collider to prevent multiple clicks
 
         // Call the PlacementManager singleton to handle placement logic
         PlacementManager.Instance.Place(this);

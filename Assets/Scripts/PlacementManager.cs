@@ -46,7 +46,7 @@ public class PlacementManager : MonoBehaviour
         if (!isPlacing || tile.occupied) return; //End Function if a lion isn't selected or the tile is occupied
 
         //Spawn the stored Gameobject at the tile's position
-        Instantiate(selectedLion, tile.transform.position, Quaternion.identity);
+        Instantiate(selectedLion, tile.transform.position, tile.transform.rotation);
         tile.occupied = true;
 
         placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion
