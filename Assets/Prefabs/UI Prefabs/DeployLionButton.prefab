@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ce47d7ccdf63a4a87ec8f05ff44dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lionPrefab: {fileID: 0}
+  lionPrefab: {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
 --- !u!1 &1236692008004445850
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +375,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
