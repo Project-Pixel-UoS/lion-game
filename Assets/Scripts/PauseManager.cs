@@ -37,7 +37,7 @@ public class PauseManager : MonoBehaviour
         // Code goes here for pausing the gameplay.
 
         // Freeze time
-        // Time.timeScale = paused ? 0f : 1f;
+        Time.timeScale = paused ? 0f : 1f;
     }
 
     // Possible restart button.
