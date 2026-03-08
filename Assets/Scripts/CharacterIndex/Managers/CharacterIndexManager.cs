@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Manages the character index grid, spawning character cards dynamically.
-/// Automatically loads all CharacterData assets from Resources/CharacterData.
 /// </summary>
 /// <remarks>
 /// Maintained by: Dayini
@@ -17,25 +16,22 @@ public class CharacterIndexManager : MonoBehaviour
     [SerializeField] private CharacterDetailPanel detailPanel;
     [SerializeField] private TextMeshProUGUI titleText;
 
+    [Header("Character Data")]
+    [SerializeField] private CharacterData[] allCharacters;
+
     [Header("Category Buttons")]
     [SerializeField] private UnityEngine.UI.Button lionButton;
     [SerializeField] private UnityEngine.UI.Button enemyButton;
 
-    private CharacterData[] allCharacters;
     private CharacterType currentCategory = CharacterType.Lion;
 
     private void Start()
     {
-        allCharacters = Resources.LoadAll<CharacterData>("CharacterData");
-
-        if (allCharacters.Length == 0)
-        {
-            Debug.LogWarning("No CharacterData assets found in Resources/CharacterData!");
-        }
-
+        // Setup button listeners
         lionButton.onClick.AddListener(() => ShowCategory(CharacterType.Lion));
         enemyButton.onClick.AddListener(() => ShowCategory(CharacterType.Enemy));
 
+        // Show Lions by default
         ShowCategory(CharacterType.Lion);
     }
 
@@ -47,17 +43,31 @@ public class CharacterIndexManager : MonoBehaviour
     {
         currentCategory = category;
 
+        // Update title
         titleText.text = category == CharacterType.Lion ? "Lion Index" : "Enemy Index";
 
-        lionButton.gameObject.SetActive(category != CharacterType.Lion);
-        enemyButton.gameObject.SetActive(category != CharacterType.Enemy);
+        // Update button visibility, shows opposite button only
+        if (category == CharacterType.Lion)
+        {
+            lionButton.gameObject.SetActive(false);
+            enemyButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            lionButton.gameObject.SetActive(true);
+            enemyButton.gameObject.SetActive(false);
 
+        }
+
+        // Clear existing cards
         ClearCards();
+
+        // Spawn cards for selected category
         SpawnCharacterCards(category);
     }
 
     /// <summary>
-    /// Clears all existing character cards from the grid.
+    /// Clears all existing character cards.
     /// </summary>
     private void ClearCards()
     {
@@ -75,11 +85,15 @@ public class CharacterIndexManager : MonoBehaviour
     {
         foreach (CharacterData character in allCharacters)
         {
-            if (character.characterType != category) continue;
+            // Only spawn cards matching the selected category
+            if (character.characterType != category)
+                continue;
 
+            // Instantiate the card
             GameObject cardObject = Instantiate(characterCardPrefab, contentParent);
-            CharacterCard card = cardObject.GetComponent<CharacterCard>();
 
+            // Setup the card with data and panel reference
+            CharacterCard card = cardObject.GetComponent<CharacterCard>();
             if (card != null)
             {
                 card.Setup(character, detailPanel);
@@ -88,7 +102,7 @@ public class CharacterIndexManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Exits to main menu.
+    /// Exits to main menu
     /// </summary>
     public void ExitToMainMenu()
     {
