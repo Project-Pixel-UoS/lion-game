@@ -7,6 +7,7 @@ public class EnemySpawnInfo
     public GameObject enemyPrefab;
     public int count;
     public float spawnRate;
+    public Direction direction;
 }
 
 [CreateAssetMenu(fileName = "WaveData", menuName = "Scriptable Objects/WaveData")]
