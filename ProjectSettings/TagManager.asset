@@ -9,6 +9,7 @@ TagManager:
   - Watering_Hole
   - Lion
   - Lane_Border
+  - Helmet_Enemy
   layers:
   - Default
   - TransparentFX
