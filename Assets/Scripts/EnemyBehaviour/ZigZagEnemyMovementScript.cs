@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class ZigZagEnemyMovementScript : MonoBehaviour
 {
@@ -6,13 +7,24 @@ public class ZigZagEnemyMovementScript : MonoBehaviour
     GameObject wateringHole;
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
     public int health = 1;
-    public float zigZagSpace; // This is the distance within the enemy keeps moving before zigging (or zagging!)
+    public float smoothingRegion; // This is the range within the enemy does not change direction
+    public int lionKnockbackForce; // This is the knockback that the enemy takes after colliding with a lion
+    public double zigZagSpeed; // This switches direction of zig zag when enemy hits lane border
+    private bool isVerticalEnemy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         wateringHole = GameObject.FindWithTag("Watering_Hole");
+        if (Math.Abs(wateringHole.transform.position.x - gameObject.transform.position.x) > Math.Abs(wateringHole.transform.position.y - gameObject.transform.position.y))
+        {
+            isVerticalEnemy = false;
+        }
+        else
+        {
+            isVerticalEnemy = true;
+        }
     }
 
     // Update is called once per frame
@@ -23,24 +35,27 @@ public class ZigZagEnemyMovementScript : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        // Velocity moves towards watering hole on x-axis
-        if (wateringHole.transform.position.x + zigZagSpace > transform.position.x)
+        if (isVerticalEnemy)
         {
-            rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+            if (wateringHole.transform.position.y < transform.position.y)
+            {
+                rb.linearVelocity = new Vector2(Convert.ToSingle(zigZagSpeed * speed), -speed);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(Convert.ToSingle(zigZagSpeed * speed), speed);
+            }
         }
-        else if (wateringHole.transform.position.x - zigZagSpace < transform.position.x)
+        else
         {
-            rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
-        }
-
-        // Velocity moves towards watering hole on y-axis
-        if (wateringHole.transform.position.y + zigZagSpace > transform.position.y)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, speed);
-        }
-        else if (wateringHole.transform.position.y - zigZagSpace < transform.position.y)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -speed);
+            if (wateringHole.transform.position.x < transform.position.x)
+            {
+                rb.linearVelocity = new Vector2(-speed, Convert.ToSingle(zigZagSpeed * speed));
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(speed, Convert.ToSingle(zigZagSpeed * speed));
+            }
         }
     }
 
@@ -48,7 +63,13 @@ public class ZigZagEnemyMovementScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Lion"))
         {
+            rb.linearVelocity = new Vector2(0, 0);
+            rb.AddForce(new Vector2(Convert.ToSingle((gameObject.transform.position.x - wateringHole.transform.position.x) * lionKnockbackForce), Convert.ToSingle((gameObject.transform.position.y - wateringHole.transform.position.y) * lionKnockbackForce)));
             health--;
+        }
+        if (other.gameObject.CompareTag("Lane_Border"))
+        {
+            zigZagSpeed = -zigZagSpeed;
         }
     }
 }

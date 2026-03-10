@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 737528082685226891}
   - component: {fileID: 4808944594944622981}
   - component: {fileID: 4444298054361271809}
-  - component: {fileID: 3628995992639987399}
-  - component: {fileID: 2299500258543598455}
   - component: {fileID: 6715447457515634302}
   m_Layer: 0
   m_Name: Zig_Zag_Enemy
@@ -39,6 +37,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &737528082685226891
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -57,6 +56,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,9 +79,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 8cb231884da26644987111f6e8a71ae1, type: 3}
   m_Color: {r: 0, g: 0.10344839, b: 1, a: 1}
   m_FlipX: 0
@@ -90,7 +93,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &4808944594944622981
 BoxCollider2D:
@@ -102,7 +104,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 198301d308f0edd479dbfee9754c8d10, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -165,34 +167,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3628995992639987399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3014706980597061176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  health: 1
---- !u!114 &2299500258543598455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3014706980597061176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f1c19032ced964ba62d7ee89227fd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minRange: 5
-  speedBoost: 0.05
 --- !u!114 &6715447457515634302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,3 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9eddcab44ffaf140b0cf3072bc6c74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  health: 1
+  smoothingRegion: 0.2
+  lionKnockbackForce: 1000
+  zigZagSpeed: 3
