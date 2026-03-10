@@ -176,5 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  wateringHole: {fileID: 8505123006332708311, guid: 12a1e4d390f0f3845a00132caa43fb67, type: 3}
-  health: 2
+  health: 1
+  smoothingRegion: 0.2
+  lionKnockbackForce: 1000

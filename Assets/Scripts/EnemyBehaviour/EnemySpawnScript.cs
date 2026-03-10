@@ -4,7 +4,7 @@ public class EnemySpawnScript : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
-    private float minSpawnTime = 4f;
+    private float minSpawnTime = 8f;
     private float maxSpawnTime = 12f;
 
     private float timer;

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 737528082685226891}
   - component: {fileID: 4808944594944622981}
   - component: {fileID: 4444298054361271809}
-  - component: {fileID: 3628995992639987399}
-  - component: {fileID: 2299500258543598455}
+  - component: {fileID: 5951439152929569553}
+  - component: {fileID: 7233431006567204985}
   m_Layer: 0
   m_Name: Basic_Enemy
   m_TagString: Enemy
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3628995992639987399
+--- !u!114 &5951439152929569553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   health: 1
---- !u!114 &2299500258543598455
+  smoothingRegion: 0.2
+  lionKnockbackForce: 1000
+--- !u!114 &7233431006567204985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,4 +193,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minRange: 5
-  speedBoost: 1
+  speedBoost: 0
