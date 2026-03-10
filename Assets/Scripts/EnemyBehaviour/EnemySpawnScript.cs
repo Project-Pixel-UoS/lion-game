@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemySpawnScript : MonoBehaviour
 {
-    public GameObject[] enemyTypes = new GameObject[4];
+    public GameObject[] enemyTypes = new GameObject[5];
     private float minSpawnTime = 8f;
     private float maxSpawnTime = 12f;
 
