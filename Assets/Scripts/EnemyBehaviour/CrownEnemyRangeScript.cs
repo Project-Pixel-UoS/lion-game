@@ -8,7 +8,7 @@ public class CrownEnemyRangeScript : MonoBehaviour
     EnemyMovementScript enemyMovement; // Reference to movement script
     GameObject crownEnemy; // Reference to crown enemy object
     public float minRange; // The minimum range for the boost to take effect
-    public int speedBoost; // The strength of the speed boost
+    public float speedBoost; // The strength of the speed boost
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +25,7 @@ public class CrownEnemyRangeScript : MonoBehaviour
             float distance = Vector2.Distance(gameObject.transform.position, crownEnemy.transform.position); // Get distance between this object and crown enemy
             if (distance < minRange)
             {
-                enemyMovement.speed += 2;
+                enemyMovement.speed += speedBoost;
             }
         }
     }
