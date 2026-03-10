@@ -10,6 +10,7 @@ TagManager:
   - Lion
   - Lane_Border
   - Helmet_Enemy
+  - Boots_Enemy
   layers:
   - Default
   - TransparentFX
