@@ -8,7 +8,7 @@ public class EnemyMovementScript : MonoBehaviour
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
     public int health = 1;
     public float smoothingRegion; // This is the range within the enemy does not change direction
-    public int lionKnockbackForce; // This is the knockback that the enemy takes after colliding with a lion
+    public int lionKnockbackForce; // This is the knockback that the enemy briefly takes after colliding with a lion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
