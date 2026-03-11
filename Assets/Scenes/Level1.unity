@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 303679233}
   - component: {fileID: 303679232}
   - component: {fileID: 303679234}
+  - component: {fileID: 303679235}
   m_Layer: 0
   m_Name: PlacementManager
   m_TagString: Untagged
@@ -803,6 +804,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66daf3dde955fc4895274d9c2b2cfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &303679235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303679231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b800d2c41c3364cb1dd96ba6ebc8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameBootstrap
 --- !u!1 &305108392
 GameObject:
   m_ObjectHideFlags: 0
