@@ -40,12 +40,13 @@ public class PauseManager : MonoBehaviour
     }
 
     // Possible restart button.
-    // public void RestartScene()
-    // {
-        // SetPaused(false);
+     public void RestartScene()
+     {
+         SetPaused(false);
+         GameStatsManager.Instance?.ResetStats();
         // Restart the level
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    // }
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+     }
 
     public void LoadMainMenu(string sceneName)
     {
