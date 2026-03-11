@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 4bfb8f35a9936464dbd86180287453d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2123412885366576082
+    second: logoBlack-transparent_0
+  - first:
+      213: -5588695130446847868
+    second: logoBlack-transparent_1
+  - first:
+      213: -2539763345734670120
+    second: logoBlack-transparent_2
+  - first:
+      213: -8922088821955004516
+    second: logoBlack-transparent_3
+  - first:
+      213: -7237941309207638458
+    second: logoBlack-transparent_4
+  - first:
+      213: 7484749622398594603
+    second: logoBlack-transparent_5
+  - first:
+      213: 3481192079413634436
+    second: logoBlack-transparent_6
+  - first:
+      213: 3190681077039928412
+    second: logoBlack-transparent_7
+  - first:
+      213: -1824095898509993915
+    second: logoBlack-transparent_8
+  - first:
+      213: -693569625344833091
+    second: logoBlack-transparent_9
+  - first:
+      213: -2731578451822924893
+    second: logoBlack-transparent_10
+  - first:
+      213: -983624223896844767
+    second: logoBlack-transparent_11
+  - first:
+      213: -111571072341539536
+    second: logoBlack-transparent_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: logoBlack-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 42
+        width: 281
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d313c7d4c0e77d10800000000000000
+      internalID: 2123412885366576082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 190
+        width: 120
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480a2c79367f072b0800000000000000
+      internalID: -5588695130446847868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 188
+        width: 144
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d86deb71b2f0ccd0800000000000000
+      internalID: -2539763345734670120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 188
+        width: 96
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9773e8dc7f5e2480800000000000000
+      internalID: -8922088821955004516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 190
+        width: 105
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e8d8f3abaad8b90800000000000000
+      internalID: -7237941309207638458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 188
+        width: 127
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2eaecb202c2fd760800000000000000
+      internalID: 7484749622398594603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 191
+        width: 117
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4856a5880cdaf4030800000000000000
+      internalID: 3481192079413634436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 41
+        width: 39
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54968cd883974c20800000000000000
+      internalID: 3190681077039928412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 41
+        width: 138
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548901dd1728fa6e0800000000000000
+      internalID: -1824095898509993915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 41
+        width: 105
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db90256b912ff56f0800000000000000
+      internalID: -693569625344833091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 41
+        width: 100
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ababfededb771ad0800000000000000
+      internalID: -2731578451822924893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 46
+        width: 190
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126c826daf67952f0800000000000000
+      internalID: -983624223896844767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoBlack-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 41
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0358fd963be937ef0800000000000000
+      internalID: -111571072341539536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      logoBlack-transparent_0: 2123412885366576082
+      logoBlack-transparent_1: -5588695130446847868
+      logoBlack-transparent_10: -2731578451822924893
+      logoBlack-transparent_11: -983624223896844767
+      logoBlack-transparent_12: -111571072341539536
+      logoBlack-transparent_2: -2539763345734670120
+      logoBlack-transparent_3: -8922088821955004516
+      logoBlack-transparent_4: -7237941309207638458
+      logoBlack-transparent_5: 7484749622398594603
+      logoBlack-transparent_6: 3481192079413634436
+      logoBlack-transparent_7: 3190681077039928412
+      logoBlack-transparent_8: -1824095898509993915
+      logoBlack-transparent_9: -693569625344833091
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
