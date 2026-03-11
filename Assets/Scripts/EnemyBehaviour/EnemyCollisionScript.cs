@@ -29,7 +29,7 @@ public class EnemyCollisionScript : MonoBehaviour
     /// </remarks>
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Crown_Enemy") || other.gameObject.CompareTag("Helmet_Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Crown_Enemy") || other.gameObject.CompareTag("Helmet_Enemy") || other.gameObject.CompareTag("Boots_Enemy"))
         {
             other.gameObject.SetActive(false);
         }
