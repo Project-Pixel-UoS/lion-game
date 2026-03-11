@@ -110,6 +110,7 @@ MonoBehaviour:
   normal: {r: 0, g: 0, b: 0, a: 1}
   highlight: {r: 0, g: 1, b: 0, a: 1}
   testVisual: {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
+  tileCollider: {fileID: 0}
 --- !u!61 &1459079546109911151
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,8 @@ public class HealthBarBehaviour : MonoBehaviour
     public Image healthBar; // Reference to the health bar image
     public float maxHealth = 5f;
     public float currentHealth;
+
+    public Action OnDeath;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +30,17 @@ public class HealthBarBehaviour : MonoBehaviour
         // Decrease health bar by a certain amount
         currentHealth -= damage;
         healthBar.fillAmount = currentHealth / maxHealth;
+
+        if (currentHealth <= 0f)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        OnDeath?.Invoke();
+        Destroy(gameObject);
     }
     
     void GainHealth(float amount)
