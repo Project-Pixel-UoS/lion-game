@@ -10,6 +10,8 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance;
     public List<WaveData> allWaves;
+    
+    public GameObject wateringHoleObject;
 
     private Dictionary<Direction, List<EnemySpawnScript>> spawnGroups = new();
     private int currentWaveIndex = 0;
@@ -62,9 +64,11 @@ public class WaveManager : MonoBehaviour
         {
             EnemySpawnScript spawnPoint = GetRandomSpawnPoint(info.direction);
             GameObject enemy = Instantiate(info.enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+            EnemyMovementScript movementStats = enemy.GetComponent<EnemyMovementScript>();
+            movementStats.wateringHole = wateringHoleObject;
             activeEnemies++;
 
-            enemy.GetComponent<HealthBarBehaviour>().OnDeath += () => activeEnemies--;
+            enemy.GetComponent<EnemyHealth>().OnDeath += () => activeEnemies--;
 
             await Awaitable.WaitForSecondsAsync(info.spawnRate);
         }

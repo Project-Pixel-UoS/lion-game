@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 2
+  group: 0
 --- !u!1 &112320168
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +736,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2374869201980820903, guid: e60c504027e58114ca756060119ddc44, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1120,7 +1121,8 @@ PrefabInstance:
       propertyPath: testVisual
       value: 
       objectReference: {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2374869201980820903, guid: e60c504027e58114ca756060119ddc44, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1657,7 +1659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnPoint
-  group: 3
+  group: 0
 --- !u!1 &704990949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 2
+  group: 0
 --- !u!224 &712101742 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
@@ -1891,7 +1893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 2
+  group: 0
 --- !u!1 &755502994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,6 +1926,7 @@ MonoBehaviour:
   allWaves:
   - {fileID: 11400000, guid: 6858999295495a344be5ebe566f741f5, type: 2}
   - {fileID: 11400000, guid: d0bcc419903a6ed41aac58430c0536a6, type: 2}
+  wateringHoleObject: {fileID: 74227668}
 --- !u!4 &755502996
 Transform:
   m_ObjectHideFlags: 0
@@ -2599,7 +2602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 3
+  group: 0
 --- !u!1 &1103225066
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,7 +3307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 1
+  group: 0
 --- !u!1 &1495285622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,7 +3701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnPoint
-  group: 3
+  group: 0
 --- !u!1001 &1635042846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4794,7 +4797,8 @@ PrefabInstance:
       propertyPath: testVisual
       value: 
       objectReference: {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2374869201980820903, guid: e60c504027e58114ca756060119ddc44, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4843,7 +4847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 1
+  group: 0
 --- !u!1 &1987146639
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,7 +5352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 1
+  group: 0
 --- !u!1001 &1657197967293340503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5558,7 +5562,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2374869201980820903, guid: e60c504027e58114ca756060119ddc44, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
