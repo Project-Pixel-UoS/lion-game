@@ -75,9 +75,11 @@ public class PlacementTile : MonoBehaviour
         // Do nothing if there is no object assigned to place
         if (testVisual == null) return;
 
-        tileCollider.enabled = false; // Disable collider to prevent multiple clicks
+        PlacementManager.Instance.OpenDeploymentMenu(); // Call the PlacementManager to handle the placement logic
 
         // Call the PlacementManager singleton to handle placement logic
-        PlacementManager.Instance.Place(this);
+        PlacementManager.Instance.SetCurrentTile(this);
+
+        tileCollider.enabled = false; // Disable collider to prevent multiple clicks
     }
 }

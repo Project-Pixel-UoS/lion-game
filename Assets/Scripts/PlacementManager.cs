@@ -16,6 +16,9 @@ public class PlacementManager : MonoBehaviour
     //Stores the Gameobject of Lion selected
     public GameObject selectedLion; 
 
+    public PlacementTile currentTile; //Stores the tile that is currently being hovered over by the mouse
+
+    [SerializeField] private GameObject deploymentMenuPanel; //Stores the Deployment Menu Panel Gameobject so that it can be toggled on/off
     [SerializeField] private GameObject placementPromptPanel; //Stores the Placement Prompt Panel Gameobject so that it can be toggled on/off
     [SerializeField] private GameObject cancelButton; //Stores the Cancel Button Gameobject so that it can be toggled on/off
 
@@ -38,6 +41,20 @@ public class PlacementManager : MonoBehaviour
     {
         selectedLion = null;
         isPlacing = false;
+        currentTile = null;
+        cancelButton.SetActive(false); //Open the Cancel Button
+    }
+
+    public void OpenDeploymentMenu() //Opens the Deployment Menu and closes the Placement Prompt Panel and Cancel Button
+    {
+        deploymentMenuPanel.SetActive(true); //Open the Deployment Menu Panel
+        placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel
+        cancelButton.SetActive(true); //Open the Cancel Button
+    }
+
+    public void SetCurrentTile(PlacementTile tile)
+    {
+        currentTile = tile;
     }
 
     //Uses an available placmeent tile to instantiate the selection Lion athe the tile's position
@@ -48,6 +65,20 @@ public class PlacementManager : MonoBehaviour
         //Spawn the stored Gameobject at the tile's position
         Instantiate(selectedLion, tile.transform.position, tile.transform.rotation);
         tile.occupied = true;
+
+        placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion
+        cancelButton.SetActive(false); //Close the Cancel Button after placing a lion
+
+        //Call the Cancel Function so that only one Lion can be placed at a time
+        Cancel(); 
+    }
+
+    public void PlaceAtCurrentTile() {
+        if (!isPlacing || currentTile.occupied) return; //End Function if a lion isn't selected or the tile is occupied
+
+        //Spawn the stored Gameobject at the tile's position
+        Instantiate(selectedLion, currentTile.transform.position, currentTile.transform.rotation);
+        currentTile.occupied = true;
 
         placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion
         cancelButton.SetActive(false); //Close the Cancel Button after placing a lion

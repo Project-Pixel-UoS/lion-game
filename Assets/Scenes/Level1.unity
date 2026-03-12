@@ -619,6 +619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLion: {fileID: 0}
+  currentTile: {fileID: 0}
+  deploymentMenuPanel: {fileID: 931837842}
   placementPromptPanel: {fileID: 1756694664}
   cancelButton: {fileID: 896614352}
   isPlacing: 0
@@ -1107,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 780
+      value: 729.1437
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1290,7 +1292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 780
+      value: 729.1437
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1610,18 +1612,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 896614358}
-        m_TargetAssemblyTypeName: ToggleGameobject, Assembly-CSharp
-        m_MethodName: ToggleObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1756694664}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 303679232}
         m_TargetAssemblyTypeName: PlacementManager, Assembly-CSharp
         m_MethodName: Cancel
@@ -1629,18 +1619,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 896614358}
-        m_TargetAssemblyTypeName: ToggleGameobject, Assembly-CSharp
-        m_MethodName: ToggleObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 896614352}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2203,7 +2181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 249.1437
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2510,7 +2488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 249.1437
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3071,7 +3049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 780
+      value: 729.1437
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4490,7 +4468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 249.1437
       objectReference: {fileID: 0}
     - target: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
       propertyPath: m_AnchoredPosition.y
