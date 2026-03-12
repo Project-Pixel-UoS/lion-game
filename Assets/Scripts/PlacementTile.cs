@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Handles the logic of a placement tile. A Tile waits for itself to be clicked, then changes colour (and maybe sprite for later?) to visualise the change.
@@ -14,7 +15,7 @@ using UnityEngine;
 // This script represents a single tile that can hold/place an object.
 // It handles visual feedback (color change) and click interaction.
 
-public class PlacementTile : MonoBehaviour
+public class PlacementTile : MonoBehaviour, IPointerClickHandler
 {
     // True if something is already placed on this tile
     public bool occupied;
@@ -66,20 +67,18 @@ public class PlacementTile : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Tile clicked!");
-        // Do nothing if tile is already occupied
-        if (occupied) return;
 
-        // Do nothing if there is no object assigned to place
+        if (occupied) return;
         if (testVisual == null) return;
 
-        PlacementManager.Instance.OpenDeploymentMenu(); // Call the PlacementManager to handle the placement logic
-
-        // Call the PlacementManager singleton to handle placement logic
+        tileCollider.enabled = false;
+        
+        PlacementManager.Instance.OpenDeploymentMenu();
         PlacementManager.Instance.SetCurrentTile(this);
 
-        tileCollider.enabled = false; // Disable collider to prevent multiple clicks
+        
     }
 }
