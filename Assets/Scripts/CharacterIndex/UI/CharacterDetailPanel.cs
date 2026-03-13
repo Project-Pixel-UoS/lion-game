@@ -16,6 +16,9 @@ public class CharacterDetailPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Button closeButton;
 
+    [Header("Input Blocking")]
+    [SerializeField] private GameObject inputBlocker;
+
     private void Start()
     {
         // Add close button listener
@@ -23,6 +26,7 @@ public class CharacterDetailPanel : MonoBehaviour
 
         // Hide panel on start
         gameObject.SetActive(false);
+        inputBlocker.SetActive(false);
     }
 
     /// <summary>
@@ -39,6 +43,7 @@ public class CharacterDetailPanel : MonoBehaviour
             characterImage.sprite = data.characterSprite;
         }
 
+        inputBlocker.SetActive(true);
         gameObject.SetActive(true);
     }
 
@@ -48,6 +53,7 @@ public class CharacterDetailPanel : MonoBehaviour
     private void HidePanel()
     {
         Debug.Log("Close detail panel");
+        inputBlocker.SetActive(false);
         gameObject.SetActive(false);
     }
 }
