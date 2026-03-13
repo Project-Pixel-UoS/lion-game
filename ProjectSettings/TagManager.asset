@@ -11,6 +11,7 @@ TagManager:
   - Lane_Border
   - Helmet_Enemy
   - Boots_Enemy
+  - Zig_Zag_Enemy
   layers:
   - Default
   - TransparentFX
