@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Crown_Enemy
+  - Watering_Hole
+  - Lion
+  - Lane_Border
+  - Helmet_Enemy
+  - Boots_Enemy
+  - Zig_Zag_Enemy
   layers:
   - Default
   - TransparentFX
