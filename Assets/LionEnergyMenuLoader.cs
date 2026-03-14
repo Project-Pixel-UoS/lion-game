@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class LionEnergyMenuLoader : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class LionEnergyMenuLoader : MonoBehaviour
                 GameObject buttonObj = Instantiate(buttonPrefab, transform);
                 DeployLionButton button = buttonObj.GetComponent<DeployLionButton>();
                 button.lionPrefab = lion;
+                button.GetComponentInChildren<TMPro.TMP_Text>().text = lion.name; // Set button text to the name of the lion prefab
             }
         }
         else if (type == DeploymentMenuType.Energy)
@@ -34,10 +36,11 @@ public class LionEnergyMenuLoader : MonoBehaviour
                 GameObject buttonObj = Instantiate(buttonPrefab, transform);
                 DeployLionButton button = buttonObj.GetComponent<DeployLionButton>();
                 button.lionPrefab = energy;
+                button.GetComponentInChildren<TMPro.TMP_Text>().text = energy.name; // Set button text to the name of the energy prefab
             }
         }
     }
-    
+
     public void SwitchMenuType(DeploymentMenuType menuType)
     {
         menuTypeRequested = menuType;
