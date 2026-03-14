@@ -19,7 +19,6 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler
 {
     // True if something is already placed on this tile
     public bool occupied;
-
     public DeploymentMenuType tileType; // The type of deployment this tile accepts (Lion or Energy)
 
     // Reference to the SpriteRenderer so we can change tile color
@@ -79,6 +78,7 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler
 
         tileCollider.enabled = false;
 
+        PlacementManager.Instance.SetCurrentMenuType(tileType); //Set the type of deployment menu to open based on the tile type    
         PlacementManager.Instance.OpenDeploymentMenu();
         PlacementManager.Instance.SetCurrentTile(this);        
     }

@@ -28,7 +28,6 @@ public class PlacementManager : MonoBehaviour
     public GameObject selectedLion; 
 
     public PlacementTile currentTile; //Stores the tile that is currently being hovered over by the mouse
-
     [SerializeField] private GameObject deploymentMenuPanel; //Stores the Deployment Menu Panel Gameobject so that it can be toggled on/off
     [SerializeField] private GameObject placementPromptPanel; //Stores the Placement Prompt Panel Gameobject so that it can be toggled on/off
     [SerializeField] private GameObject cancelButton; //Stores the Cancel Button Gameobject so that it can be toggled on/off
@@ -61,10 +60,17 @@ public class PlacementManager : MonoBehaviour
     {
         Debug.Log("Opening Deployment Menu");
         deploymentMenuPanel.SetActive(true); //Open the Deployment Menu Panel
+        
+        deploymentMenuPanel.GetComponent<LionEnergyMenuLoader>().SwitchMenuType(currentMenu);
+        
         placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel
         cancelButton.SetActive(true); //Open the Cancel Button
     }
 
+    public void SetCurrentMenuType(DeploymentMenuType menuType) //Sets the type of deployment menu currently open (Lion or Energy)
+    {
+        currentMenu = menuType;
+    }
     public void SetCurrentTile(PlacementTile tile)
     {
         currentTile = tile;
