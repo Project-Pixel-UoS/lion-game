@@ -1482,6 +1482,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   group: 0
+--- !u!1 &743144932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 800629011751283846, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
+  m_PrefabInstance: {fileID: 1657197967293340503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &755502994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1709,7 @@ GameObject:
   - component: {fileID: 931837845}
   - component: {fileID: 931837844}
   - component: {fileID: 931837846}
+  - component: {fileID: 931837847}
   m_Layer: 5
   m_Name: LionPanel
   m_TagString: Untagged
@@ -1798,6 +1804,23 @@ MonoBehaviour:
   m_Spacing: {x: 380, y: 380}
   m_Constraint: 1
   m_ConstraintCount: 2
+--- !u!114 &931837847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931837842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e553966e2b801f4693eb3c13eb2563c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  buttonPrefab: {fileID: 743144932}
+  lionPrefabs:
+  - {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
+  - {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
+  energyPrefabs: []
 --- !u!1 &942177617
 GameObject:
   m_ObjectHideFlags: 0
