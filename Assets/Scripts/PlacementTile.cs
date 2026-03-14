@@ -20,6 +20,8 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler
     // True if something is already placed on this tile
     public bool occupied;
 
+    public DeploymentMenuType tileType; // The type of deployment this tile accepts (Lion or Energy)
+
     // Reference to the SpriteRenderer so we can change tile color
     public SpriteRenderer sr;
 
