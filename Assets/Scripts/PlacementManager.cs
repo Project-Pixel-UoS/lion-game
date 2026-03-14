@@ -8,10 +8,21 @@ using UnityEngine;
 /// <remarks>
 /// Maintained by: Michael Edems-Eze
 /// </remarks>
+/// 
+
+public enum DeploymentMenuType
+{
+    Lion,
+    Energy
+}
+
 public class PlacementManager : MonoBehaviour
 {
     //Creates Instance for Singleton
     public static PlacementManager Instance; 
+
+    //Stores the type of deployment menu currently open (Lion or Energy)
+    public DeploymentMenuType currentMenu;
 
     //Stores the Gameobject of Lion selected
     public GameObject selectedLion; 
@@ -48,6 +59,7 @@ public class PlacementManager : MonoBehaviour
 
     public void OpenDeploymentMenu() //Opens the Deployment Menu and closes the Placement Prompt Panel and Cancel Button
     {
+        Debug.Log("Opening Deployment Menu");
         deploymentMenuPanel.SetActive(true); //Open the Deployment Menu Panel
         placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel
         cancelButton.SetActive(true); //Open the Cancel Button
@@ -75,14 +87,17 @@ public class PlacementManager : MonoBehaviour
     }
 
     public void PlaceAtCurrentTile() {
+        if (selectedLion == null) return;
         if (currentTile.occupied) return; //End Function if a lion isn't selected or the tile is occupied
 
         //Spawn the stored Gameobject at the tile's position
         Instantiate(selectedLion, currentTile.transform.position, currentTile.transform.rotation);
         currentTile.occupied = true;
 
-        //placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion
-        //cancelButton.SetActive(false); //Close the Cancel Button after placing a lion
+        currentTile.GetComponent<Collider2D>().enabled = false; //Re-enable the tile's collider after placing a lion
+
+        placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion
+        cancelButton.SetActive(false); //Close the Cancel Button after placing a lion
 
         //Call the Cancel Function so that only one Lion can be placed at a time
         Cancel(); 

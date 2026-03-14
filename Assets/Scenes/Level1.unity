@@ -525,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1459079546109911151, guid: e60c504027e58114ca756060119ddc44, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1459079546109911151, guid: e60c504027e58114ca756060119ddc44, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
@@ -635,6 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47be61d2bf0d340a01a5504dc0c18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMenu: 0
   selectedLion: {fileID: 0}
   currentTile: {fileID: 0}
   deploymentMenuPanel: {fileID: 931837842}
@@ -4530,7 +4531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1459079546109911151, guid: e60c504027e58114ca756060119ddc44, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1459079546109911151, guid: e60c504027e58114ca756060119ddc44, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w

@@ -50,6 +50,7 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler
         if (tileCollider == null) {
             Debug.LogWarning("PlacementTile: No Collider2D found on the tile. Click detection will not work.");
         }
+        tileCollider.enabled = true; // Ensure the collider is enabled at the start
     }
 
     void Update()
@@ -75,10 +76,8 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler
         if (testVisual == null) return;
 
         tileCollider.enabled = false;
-        
-        PlacementManager.Instance.OpenDeploymentMenu();
-        PlacementManager.Instance.SetCurrentTile(this);
 
-        
+        PlacementManager.Instance.OpenDeploymentMenu();
+        PlacementManager.Instance.SetCurrentTile(this);        
     }
 }
