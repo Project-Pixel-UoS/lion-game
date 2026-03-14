@@ -9,10 +9,6 @@ public class LionEnergyMenuLoader : MonoBehaviour
     public List<GameObject> lionPrefabs;
     public List<GameObject> energyPrefabs;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     void SpawnButtons(DeploymentMenuType type)
     {
@@ -41,6 +37,7 @@ public class LionEnergyMenuLoader : MonoBehaviour
             }
         }
     }
+    
     public void SwitchMenuType(DeploymentMenuType menuType)
     {
         menuTypeRequested = menuType;
