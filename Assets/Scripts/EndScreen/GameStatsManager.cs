@@ -75,4 +75,29 @@ public class GameStatsManager : MonoBehaviour
     }
 
     #endregion
+
+    #region Save/Load Functionality
+    public void SaveStats(ref GameStatsSaveData saveData)
+    {
+        saveData.EnemiesKilled = EnemiesKilled;
+        saveData.MoneySpent = MoneySpent;
+        saveData.WaveReached = WaveReached;
+    }
+
+    public void LoadStats(GameStatsSaveData saveData)
+    {
+        EnemiesKilled = saveData.EnemiesKilled;
+        MoneySpent = saveData.MoneySpent;
+        WaveReached = saveData.WaveReached;
+    }
+
+    #endregion
+}
+
+[System.Serializable]
+public struct GameStatsSaveData
+{
+    public int EnemiesKilled;
+    public int MoneySpent;
+    public int WaveReached;
 }
