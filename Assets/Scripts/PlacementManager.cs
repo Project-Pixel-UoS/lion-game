@@ -10,6 +10,7 @@ using UnityEngine;
 /// </remarks>
 /// 
 
+// This enumeration defines the types of deployment menus available
 public enum DeploymentMenuType
 {
     Lion,
@@ -26,7 +27,6 @@ public class PlacementManager : MonoBehaviour
 
     //Stores the Gameobject of Lion selected
     public GameObject selectedLion; 
-
     public PlacementTile currentTile; //Stores the tile that is currently being hovered over by the mouse
     [SerializeField] private GameObject deploymentMenuPanel; //Stores the Deployment Menu Panel Gameobject so that it can be toggled on/off
     [SerializeField] private GameObject placementPromptPanel; //Stores the Placement Prompt Panel Gameobject so that it can be toggled on/off
@@ -61,8 +61,9 @@ public class PlacementManager : MonoBehaviour
         Debug.Log("Opening Deployment Menu");
         deploymentMenuPanel.SetActive(true); //Open the Deployment Menu Panel
         
+        //Switch the menu type of the deployment menu to match the type of the currently hovered tile, so that the correct buttons are spawned in the menu
         deploymentMenuPanel.GetComponent<LionEnergyMenuLoader>().SwitchMenuType(currentMenu);
-        
+
         placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel
         cancelButton.SetActive(true); //Open the Cancel Button
     }

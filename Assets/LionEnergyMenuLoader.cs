@@ -3,16 +3,32 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
+/// <summary>
+/// Handles the logic of a deployment menu for selecting lions or energy items. 
+/// This script should be attached to the parent GameObject of the buttons in the deployment menu,
+/// and will spawn buttons based on the type of menu requested (Lion or Energy).
+/// The items to be spawned in the menu should be assigned in the Inspector as lists of GameObjects (lionPrefabs and energyPrefabs).
+/// When a button is clicked, it will pass the corresponding prefab to the PlacementManager for placement
+/// </summary>
+/// <remarks>
+/// Maintained by: Michael Edems-Eze
+/// </remarks>
+/// 
+/// <todo> - 
+/// Add image of the gameobject to the button as well, but this is a bit more complex 
+/// <todo>
 public class LionEnergyMenuLoader : MonoBehaviour
 {
     public DeploymentMenuType menuTypeRequested; // The type of menu this loader should create (Lion or Energy)
     public GameObject buttonPrefab; // Prefab for the buttons to spawn in the menu
+    // Lists of prefabs to spawn in the menu, assigned in the Inspector
     public List<GameObject> lionPrefabs;
     public List<GameObject> energyPrefabs;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    // Spawns buttons in the menu based on the requested menu type and assigned prefabs
     void SpawnButtons(DeploymentMenuType type)
     {
+        //Do nothing if there is no button prefab assigned, as we can't spawn buttons without it
         if (buttonPrefab == null)
         {
             Debug.LogWarning("LionEnergyMenuLoader: No buttonPrefab assigned.");
@@ -27,6 +43,7 @@ public class LionEnergyMenuLoader : MonoBehaviour
                 DeployLionButton button = buttonObj.GetComponent<DeployLionButton>();
                 button.lionPrefab = lion;
                 button.GetComponentInChildren<TMPro.TMP_Text>().text = lion.name; // Set button text to the name of the lion prefab
+                 
             }
         }
         else if (type == DeploymentMenuType.Energy)
@@ -41,6 +58,7 @@ public class LionEnergyMenuLoader : MonoBehaviour
         }
     }
 
+    // Call this function to switch the menu type and spawn the corresponding buttons
     public void SwitchMenuType(DeploymentMenuType menuType)
     {
         menuTypeRequested = menuType;

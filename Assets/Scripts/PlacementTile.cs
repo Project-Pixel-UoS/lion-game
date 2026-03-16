@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// Handles the logic of a placement tile. A Tile waits for itself to be clicked, then changes colour (and maybe sprite for later?) to visualise the change.
 /// It also stores information on if it is occupied or not, so that it can't hold more than one lion at a time.
+/// Also open the deployment menu when clicked, and passes information on the type of tile to the Placement Manager so that the correct menu is opened.
 /// </summary>
 /// <remarks>
 /// Maintained by: Michael Edems-Eze
