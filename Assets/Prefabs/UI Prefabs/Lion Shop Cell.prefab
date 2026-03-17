@@ -862,7 +862,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7209454571884219249}
         m_TargetAssemblyTypeName: LionShopCell, Assembly-CSharp
         m_MethodName: OnPurchaseClick
         m_Mode: 1
