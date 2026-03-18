@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Handles the logic of a placement tile. A Tile waits for itself to be clicked, then changes colour (and maybe sprite for later?) to visualise the change.
 /// It also stores information on if it is occupied or not, so that it can't hold more than one lion at a time.
+/// Also open the deployment menu when clicked, and passes information on the type of tile to the Placement Manager so that the correct menu is opened.
 /// </summary>
 /// <remarks>
 /// Maintained by: Michael Edems-Eze
@@ -14,10 +16,11 @@ using UnityEngine;
 // This script represents a single tile that can hold/place an object.
 // It handles visual feedback (color change) and click interaction.
 
-public class PlacementTile : MonoBehaviour
+public class PlacementTile : MonoBehaviour, IPointerClickHandler
 {
     // True if something is already placed on this tile
     public bool occupied;
+    public DeploymentMenuType tileType; // The type of deployment this tile accepts (Lion or Energy)
 
     // Reference to the SpriteRenderer so we can change tile color
     public SpriteRenderer sr;
@@ -49,6 +52,7 @@ public class PlacementTile : MonoBehaviour
         if (tileCollider == null) {
             Debug.LogWarning("PlacementTile: No Collider2D found on the tile. Click detection will not work.");
         }
+        tileCollider.enabled = true; // Ensure the collider is enabled at the start
     }
 
     void Update()
@@ -66,18 +70,17 @@ public class PlacementTile : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Tile clicked!");
-        // Do nothing if tile is already occupied
-        if (occupied) return;
 
-        // Do nothing if there is no object assigned to place
+        if (occupied) return;
         if (testVisual == null) return;
 
-        tileCollider.enabled = false; // Disable collider to prevent multiple clicks
+        tileCollider.enabled = false;
 
-        // Call the PlacementManager singleton to handle placement logic
-        PlacementManager.Instance.Place(this);
+        PlacementManager.Instance.SetCurrentMenuType(tileType); //Set the type of deployment menu to open based on the tile type    
+        PlacementManager.Instance.OpenDeploymentMenu();
+        PlacementManager.Instance.SetCurrentTile(this);        
     }
 }
