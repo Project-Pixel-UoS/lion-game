@@ -15,6 +15,7 @@ public class GameBootstrap : MonoBehaviour
     private void Awake()
     {
         _ = CurrencyManager.Instance;
+        _ = PermanentCurrencyManager.Instance;
     }
 }
 
