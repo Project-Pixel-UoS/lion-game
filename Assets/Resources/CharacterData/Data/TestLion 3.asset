@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c29e3505edb7184f85617ea38f8f3e7, type: 3}
-  m_Name: TestLion
+  m_Name: TestLion 3
   m_EditorClassIdentifier: 
-  characterName: Regular Lion
-  characterSprite: {fileID: -6135221329732604567, guid: cd8010f4534b5eb4f9c2a647df160624, type: 3}
+  characterName: Regular Lion 4
+  characterSprite: {fileID: 3793069108295666864, guid: 54ff8fe9097274a9694d708d6007e6ad, type: 3}
   toughness: Low
-  price: 100
-  isUnlocked: 1
+  price: 1000
+  isUnlocked: 0
   description: This lion can only moves left and right.
   characterType: 0
