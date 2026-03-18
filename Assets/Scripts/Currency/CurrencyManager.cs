@@ -60,6 +60,7 @@ public class CurrencyManager : MonoBehaviour
         CurrentCurrency = PlayerPrefs.GetInt(CURRENCY_SAVE_KEY, startingCurrency);
         Debug.Log($"[CurrencyManager] Loaded currency: {CurrentCurrency}");
         RefreshUI();
+        UpdateUIVisibility(SceneManager.GetActiveScene().name);
     }
 
     private void OnDestroy()
