@@ -17,4 +17,5 @@ MonoBehaviour:
     count: 2
     spawnRate: 0.5
     direction: 0
+  permanentCurrencyReward: 1
   timeBeforeNextWave: 5
