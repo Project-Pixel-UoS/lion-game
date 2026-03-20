@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 
 public class SoundSystem : MonoBehaviour
 {
-    public enum sounds {};
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,4 +14,15 @@ public class SoundSystem : MonoBehaviour
     {
         
     }
+}
+
+public enum SFXEvent { 
+
+}
+
+[Serializable]
+public struct SoundEffect {
+    public AudioClip audio;
+    public SFXEvent type;
+    [Range (0,1)] public float level;
 }
