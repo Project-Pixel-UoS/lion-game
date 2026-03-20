@@ -460,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.Physics2DRaycaster
   m_EventMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 127
   m_MaxRayIntersections: 0
 --- !u!1 &139276223
 GameObject:
@@ -3790,6 +3790,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1459079546109911151, guid: e60c504027e58114ca756060119ddc44, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459079546109911151, guid: e60c504027e58114ca756060119ddc44, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1459079546109911151, guid: e60c504027e58114ca756060119ddc44, type: 3}
