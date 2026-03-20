@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 325919265991881075}
   - component: {fileID: 8378500812262924332}
   - component: {fileID: 1459079546109911151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LionPlacementSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

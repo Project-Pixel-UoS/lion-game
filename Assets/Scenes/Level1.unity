@@ -1577,6 +1577,7 @@ MonoBehaviour:
   - {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
   - {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
   - {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
+  - {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
   energyPrefabs:
   - {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
   - {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
@@ -3324,7 +3325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378500812262924332, guid: e60c504027e58114ca756060119ddc44, type: 3}
       propertyPath: tileType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8378500812262924332, guid: e60c504027e58114ca756060119ddc44, type: 3}
       propertyPath: testVisual
