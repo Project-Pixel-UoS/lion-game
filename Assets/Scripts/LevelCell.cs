@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class LevelCell : MonoBehaviour
 {
@@ -30,17 +31,18 @@ public class LevelCell : MonoBehaviour
         }
         else
         {
-            // Check if save exists
             if (SaveSystem.SaveExists())
             {
                 SaveSystem.SaveData data = SaveSystem.GetSaveData();
                 Debug.Log("Save exists. Current saved level: " + data.gameStats.currentLevel);
                 
-                // Check if this level matches saved level
                 if (data.gameStats.currentLevel == levelIndex)
                 {
-                    // Show popup instead of loading immediately
                     Debug.Log("Save exists for this level. Showing popup.");
+                    
+                    GameObject popup = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(go => go.name == "ContinuePopupPanel" && go.scene.isLoaded);popup.SetActive(true);
+                    popup.SetActive(true);
+
                     return;
                 }
             }
