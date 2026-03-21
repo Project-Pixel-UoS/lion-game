@@ -16,6 +16,7 @@ public class GameStatsManager : MonoBehaviour
     public int EnemiesKilled;
     public int MoneySpent;
     public int WaveReached;
+    public int currentLevel; 
 
     #region Unity Lifecycle
 
@@ -101,6 +102,7 @@ public class GameStatsManager : MonoBehaviour
         saveData.EnemiesKilled = EnemiesKilled;
         saveData.MoneySpent = MoneySpent;
         saveData.WaveReached = WaveReached;
+        saveData.currentLevel = currentLevel;
     }
 
     public void LoadStats(GameStatsSaveData saveData)
@@ -108,6 +110,7 @@ public class GameStatsManager : MonoBehaviour
         EnemiesKilled = saveData.EnemiesKilled;
         MoneySpent = saveData.MoneySpent;
         WaveReached = saveData.WaveReached;
+        currentLevel = saveData.currentLevel;
     }
 
     #endregion
@@ -119,4 +122,5 @@ public struct GameStatsSaveData
     public int EnemiesKilled;
     public int MoneySpent;
     public int WaveReached;
+    public int currentLevel;
 }
