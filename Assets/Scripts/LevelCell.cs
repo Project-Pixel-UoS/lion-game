@@ -30,6 +30,27 @@ public class LevelCell : MonoBehaviour
         }
         else
         {
+            // Check if save exists
+            if (SaveSystem.SaveExists())
+            {
+                SaveSystem.SaveData data = SaveSystem.GetSaveData();
+                Debug.Log("Save exists. Current saved level: " + data.gameStats.currentLevel);
+                
+                // Check if this level matches saved level
+                if (data.gameStats.currentLevel == levelIndex)
+                {
+                    // Show popup instead of loading immediately
+                    Debug.Log("Save exists for this level. Showing popup.");
+                    return;
+                }
+            }
+
+            if (GameStatsManager.Instance != null)
+            {
+                Debug.Log("Setting current saved level to: " + (levelIndex));
+                GameStatsManager.Instance.currentLevel = levelIndex; // Set the current level in the GameStatsManager
+            }            
+
             SceneManager.LoadScene("Level" + levelIndex);
         }
     }

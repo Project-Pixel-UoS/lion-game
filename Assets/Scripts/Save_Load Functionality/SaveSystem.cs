@@ -10,6 +10,12 @@ public class SaveSystem
         public GameStatsSaveData gameStats;
     }
 
+    public static bool SaveExists()
+    {
+        string path = Application.persistentDataPath + "/save.save";
+        return System.IO.File.Exists(path);
+    }
+
     public static string SaveFileName()
     {
         string fileName = Application.persistentDataPath + "/save" + ".save";
@@ -41,5 +47,17 @@ public class SaveSystem
     public static void HandleLoadData()
     {
         GameStatsManager.Instance.LoadStats(_currentSaveData.gameStats);
+    }
+
+    public static SaveData GetSaveData()
+    {
+        // If file exists, load it first
+        if (File.Exists(SaveFileName()))
+        {
+            string saveContent = File.ReadAllText(SaveFileName());
+            _currentSaveData = JsonUtility.FromJson<SaveData>(saveContent);
+        }
+
+        return _currentSaveData;
     }
 }
