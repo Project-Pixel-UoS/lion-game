@@ -12,10 +12,10 @@ using UnityEngine;
 
 public class GameStatsManager : MonoBehaviour
 {
-    public static GameStatsManager Instance { get; private set; }
-    public int EnemiesKilled { get; private set; }
-    public int MoneySpent { get; private set; }
-    public int WaveReached { get; private set; }
+    public static GameStatsManager Instance;
+    public int EnemiesKilled;
+    public int MoneySpent;
+    public int WaveReached;
 
     #region Unity Lifecycle
 
