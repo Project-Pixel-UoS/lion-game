@@ -364,7 +364,10 @@ MonoBehaviour:
   coneAngle: 36.4
   rayCount: 20
   attackDamage: 2
-  rechargeTime: 0.2
+  rechargeTime: 2
+  projectilePiercing: 2
+  projectileAoeRadius: 0
+  projectileScale: 0.2
   roarProjectilePrefab: {fileID: 612404576898284485, guid: 2629c8989598ca2489e3f27d34a78840, type: 3}
   projectileSpawnOffset: {x: 0, y: 0}
   ammunition: 20

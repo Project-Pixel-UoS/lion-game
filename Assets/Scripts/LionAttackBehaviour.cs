@@ -12,6 +12,10 @@ public class LionAttackBehaviour : MonoBehaviour
     public float rechargeTime = 1f;
     private float lastAttackTime = 0f;
 
+    [SerializeField] private int projectilePiercing = 1; //How many enemies the projectile can pass through.
+    [SerializeField] private float projectileAoeRadius = 1.5f; //The radius of enemies the projectile also damages after hitting one.
+    [SerializeField] private float projectileScale = 1f;
+
     public GameObject roarProjectilePrefab; // Reference to the projectile prefab
     public Vector2 projectileSpawnOffset; // Offset from where the projectile will be spawned
 
@@ -66,6 +70,9 @@ public class LionAttackBehaviour : MonoBehaviour
             if (projectileBehaviour != null)
             {
                 projectileBehaviour.SetDamage(attackDamage); // Set the damage for the projectile using Lion Data
+                projectileBehaviour.SetAoeRadius(projectileAoeRadius);
+                projectileBehaviour.SetPiercing(projectilePiercing);
+                projectileBehaviour.SetScale(projectileScale);
             }
         }
     }
