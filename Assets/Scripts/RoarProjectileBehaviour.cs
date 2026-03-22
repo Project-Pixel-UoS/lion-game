@@ -9,12 +9,14 @@ public class RoarProjectileBehaviour : MonoBehaviour
     public Rigidbody2D rb; // Reference to the Rigidbody2D component
     public float speed = 3f; // Speed of the projectile
 
-    public int damage = 1; // Damage dealt to enemies on impact
+    public float damage = 1f; // Damage dealt to enemies on impact
 
     [SerializeField] private int maxDurability = 1;
     private int currentDurability;
 
     [SerializeField] private float aoeRadius = 1.5f;
+
+    private float slowFactor = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,7 +36,7 @@ public class RoarProjectileBehaviour : MonoBehaviour
         }
     }
 
-    public void SetDamage(int damageAmount)
+    public void SetDamage(float damageAmount)
     {
         damage = damageAmount; // Set the damage amount for the projectile
     }
@@ -55,6 +57,11 @@ public class RoarProjectileBehaviour : MonoBehaviour
         transform.localScale = Vector3.one * projectileScale;
     }
 
+    public void SetSlowFactor(float factor)
+    {
+        slowFactor = factor;
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -67,8 +74,13 @@ public class RoarProjectileBehaviour : MonoBehaviour
             {
                 enemyHealth.LoseHealth(damage); // Apply damage to the enemy
             }
+
+            if (collision.gameObject.TryGetComponent<EnemyMovementScript>(out EnemyMovementScript enemyMovement) && slowFactor != 0){
+                    Debug.Log($"Set Speed Modifier to {1-slowFactor}");
+                    enemyMovement.SetSpeedModifier(1-slowFactor);
+            }
+
             currentDurability -= 1;
-            Debug.Log($"current durability: {currentDurability}");
             if (currentDurability <= 0) {
                 Destroy(gameObject); // Destroy the projectile on impact if it has run out of durability;
             }
@@ -78,7 +90,7 @@ public class RoarProjectileBehaviour : MonoBehaviour
     void ApplyAoEDamage(Vector2 impactPoint)
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(impactPoint, aoeRadius);
-        HashSet<EnemyHealth> damagedEnemies = new HashSet<EnemyHealth>();
+        HashSet<EnemyHealth> impactedEnemies = new HashSet<EnemyHealth>();
 
         foreach (Collider2D hit in hits)
         {
@@ -88,10 +100,10 @@ public class RoarProjectileBehaviour : MonoBehaviour
             }
 
             if (hit.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth) &&
-                !damagedEnemies.Contains(enemyHealth))
+                !impactedEnemies.Contains(enemyHealth))
             {
                 enemyHealth.LoseHealth(damage);
-                damagedEnemies.Add(enemyHealth);
+                impactedEnemies.Add(enemyHealth);
             }
         }
     }

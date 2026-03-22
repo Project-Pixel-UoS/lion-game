@@ -363,11 +363,12 @@ MonoBehaviour:
   maxDistance: 6
   coneAngle: 36.4
   rayCount: 20
-  attackDamage: 2
-  rechargeTime: 2
-  projectilePiercing: 2
+  attackDamage: 0.5
+  rechargeTime: 1
+  projectilePiercing: 1
   projectileAoeRadius: 0
   projectileScale: 0.2
+  projectileSlowFactor: 0.8
   roarProjectilePrefab: {fileID: 612404576898284485, guid: 2629c8989598ca2489e3f27d34a78840, type: 3}
   projectileSpawnOffset: {x: 0, y: 0}
   ammunition: 20
