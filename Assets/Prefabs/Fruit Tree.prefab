@@ -264,8 +264,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8800449923111488941}
   - component: {fileID: 6535651987042723786}
-  - component: {fileID: 5597118704931804804}
   - component: {fileID: 4070051645571815608}
+  - component: {fileID: -4794856783628736413}
+  - component: {fileID: -581054899965842350}
   m_Layer: 0
   m_Name: Fruit Tree
   m_TagString: Untagged
@@ -348,26 +349,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5597118704931804804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5148432056765847449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c86370e24dbf304d9e4f54c4d60bd24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 6
-  coneAngle: 36.4
-  rayCount: 20
-  attackDamage: 2
-  rechargeTime: 0.2
-  roarProjectilePrefab: {fileID: 612404576898284485, guid: 2629c8989598ca2489e3f27d34a78840, type: 3}
-  projectileSpawnOffset: {x: 0, y: 0}
-  ammunition: 20
 --- !u!114 &4070051645571815608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +364,57 @@ MonoBehaviour:
   healthBar: {fileID: 5234793364847426620}
   maxHealth: 5
   currentHealth: 0
+--- !u!114 &-4794856783628736413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148432056765847449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97891b3609a90534f80f57e765865589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitTreeLifeCycle
+  lifetime: 20
+  growingInterval: 3
+  overripeTime: 5
+--- !u!58 &-581054899965842350
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148432056765847449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 14.915001
 --- !u!1 &6621853650924837467
 GameObject:
   m_ObjectHideFlags: 0

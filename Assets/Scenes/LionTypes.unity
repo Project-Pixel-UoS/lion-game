@@ -619,6 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLion: {fileID: 0}
+  fruit: 0
   placementPromptPanel: {fileID: 1756694664}
   cancelButton: {fileID: 896614352}
   isPlacing: 0

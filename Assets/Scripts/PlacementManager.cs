@@ -14,7 +14,9 @@ public class PlacementManager : MonoBehaviour
     public static PlacementManager Instance; 
 
     //Stores the Gameobject of Lion selected
-    public GameObject selectedLion; 
+    public GameObject selectedLion;
+
+    public int fruit;
 
     [SerializeField] private GameObject placementPromptPanel; //Stores the Placement Prompt Panel Gameobject so that it can be toggled on/off
     [SerializeField] private GameObject cancelButton; //Stores the Cancel Button Gameobject so that it can be toggled on/off
