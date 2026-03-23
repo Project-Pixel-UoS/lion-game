@@ -1757,9 +1757,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb3d00b52fe144438f873988ffebda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  serializedSoundEffects: []
-  soundEffectsSource: {fileID: 0}
-  musicSource: {fileID: 0}
+  sfxDefinitions:
+  - sfxType: 1
+    clip: {fileID: 8300000, guid: f81e941dec7fd20288b3f0690eafa907, type: 3}
+    volume: 1
+  - sfxType: 1
+    clip: {fileID: 8300000, guid: f81e941dec7fd20288b3f0690eafa907, type: 3}
+    volume: 1
 --- !u!4 &1830463451
 Transform:
   m_ObjectHideFlags: 0
