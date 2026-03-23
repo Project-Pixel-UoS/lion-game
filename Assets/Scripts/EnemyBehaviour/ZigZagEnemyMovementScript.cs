@@ -4,7 +4,7 @@ using System;
 public class ZigZagEnemyMovementScript : MonoBehaviour
 {
     public float speed = 1f;
-    GameObject wateringHole;
+    public GameObject wateringHole;
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
     public int health = 1;
     public float smoothingRegion; // This is the range within the enemy does not change direction

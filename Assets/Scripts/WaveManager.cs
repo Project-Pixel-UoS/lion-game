@@ -64,8 +64,8 @@ public class WaveManager : MonoBehaviour
         {
             EnemySpawnScript spawnPoint = GetRandomSpawnPoint(info.direction);
             GameObject enemy = Instantiate(info.enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
-            EnemyMovementScript movementStats = enemy.GetComponent<EnemyMovementScript>();
-            movementStats.wateringHole = wateringHoleObject;
+            //EnemyMovementScript movementStats = enemy.GetComponent<EnemyMovementScript>();
+            //movementStats.wateringHole = wateringHoleObject;
             activeEnemies++;
 
             enemy.GetComponent<EnemyHealth>().OnDeath += () => activeEnemies--;
