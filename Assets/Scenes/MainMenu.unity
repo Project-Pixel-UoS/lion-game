@@ -1761,9 +1761,6 @@ MonoBehaviour:
   - sfxType: 1
     clip: {fileID: 8300000, guid: f81e941dec7fd20288b3f0690eafa907, type: 3}
     volume: 1
-  - sfxType: 1
-    clip: {fileID: 8300000, guid: f81e941dec7fd20288b3f0690eafa907, type: 3}
-    volume: 1
 --- !u!4 &1830463451
 Transform:
   m_ObjectHideFlags: 0
