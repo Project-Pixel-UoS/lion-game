@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 325919265991881075}
   - component: {fileID: 8378500812262924332}
   - component: {fileID: 1459079546109911151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LionPlacementSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  tileType: 0
   sr: {fileID: 0}
   normal: {r: 0, g: 0, b: 0, a: 1}
   highlight: {r: 0, g: 1, b: 0, a: 1}
