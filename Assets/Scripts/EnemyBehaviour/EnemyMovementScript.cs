@@ -9,7 +9,7 @@ public class EnemyMovementScript : MonoBehaviour
     public int health = 1;
     public float smoothingRegion; // This is the range within the enemy does not change direction
     public int lionKnockbackForce; // This is the knockback that the enemy briefly takes after colliding with a lion
-
+    public string[] TagList = {"Zig_Zag_Enemy", "Helmet_Enemy", "Boots_Enemy","Enemy"};
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -63,6 +63,14 @@ public class EnemyMovementScript : MonoBehaviour
             rb.linearVelocity = new Vector2(0, 0);
             rb.AddForce(new Vector2(Convert.ToSingle((gameObject.transform.position.x - wateringHole.transform.position.x) * lionKnockbackForce), Convert.ToSingle((gameObject.transform.position.y - wateringHole.transform.position.y) * lionKnockbackForce)));
             health--;
+        }
+        foreach (string TagToTest in TagList)
+        {
+            if (other.gameObject.tag == TagToTest )
+            {
+                Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+                return;
+            }
         }
     }
 }

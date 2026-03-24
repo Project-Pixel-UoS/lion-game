@@ -14,6 +14,7 @@ public class ZigZagEnemyMovementScript : MonoBehaviour
     public float correctionTime; // Time before enemy movement is corrected if stuck
     private float timer;
     private bool isVerticalEnemy;
+    public string[] TagList = {"Zig_Zag_Enemy", "Helmet_Enemy", "Boots_Enemy","Enemy"};
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -76,6 +77,7 @@ public class ZigZagEnemyMovementScript : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Lion"))
         {
             rb.linearVelocity = new Vector2(0, 0);
@@ -85,6 +87,14 @@ public class ZigZagEnemyMovementScript : MonoBehaviour
         if (other.gameObject.CompareTag("Lane_Border"))
         {
             zigZagSpeed = -zigZagSpeed;
+        }
+        foreach (string TagToTest in TagList)
+        {
+            if (other.gameObject.tag == TagToTest )
+            {
+                Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+                return;
+            }
         }
     }
 }
