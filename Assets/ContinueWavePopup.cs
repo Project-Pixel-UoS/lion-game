@@ -18,11 +18,11 @@ public class ContinueWavePopup : MonoBehaviour
 
     public void ContinueGame()
     {
-        var data = SaveSystem.GetSaveData();
+        // Set flag so the next scene knows to load from save
+        SaveSystem.LoadRequested = true;
 
-        GameStatsManager.Instance.currentLevel = data.gameStats.currentLevel;
-
-        SceneManager.LoadScene("GameScene");
+        // Load the correct level scene (same pattern as NewGame)
+        SceneManager.LoadScene("Level" + levelToLoad);
     }
 
     public void NewGame()

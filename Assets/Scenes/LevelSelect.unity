@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0a1ec6f44f2364494bf1ec05ed32f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  levelToLoad: 0
 --- !u!1 &202529643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,7 +1423,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1378534147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 94375147}
+        m_TargetAssemblyTypeName: ContinueWavePopup, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1378534147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,7 +2072,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1981340003}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 94375147}
+        m_TargetAssemblyTypeName: ContinueWavePopup, Assembly-CSharp
+        m_MethodName: NewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1981340003
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ public class SaveSystem
 {
     private static SaveData _currentSaveData = new SaveData();
 
+    public static bool LoadRequested = false;
+
     [System.Serializable]
     public struct SaveData
     {
