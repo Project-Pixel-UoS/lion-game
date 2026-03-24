@@ -1002,6 +1002,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8142ef972f97de141a5aa7a4ab8e2285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemiesKilled: 0
+  MoneySpent: 0
+  WaveReached: 0
+  currentLevel: 0
 --- !u!4 &417930073
 Transform:
   m_ObjectHideFlags: 0
@@ -1139,6 +1143,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
   m_PrefabInstance: {fileID: 469749930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &519231172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 519231174}
+  - component: {fileID: 519231173}
+  m_Layer: 0
+  m_Name: LoadSaveOnStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &519231173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519231172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001b51e94faf5c34082db050d0bbc9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &519231174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519231172}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.24571, y: -2.33742, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &571573221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4733,3 +4781,4 @@ SceneRoots:
   - {fileID: 942177618}
   - {fileID: 571573221}
   - {fileID: 755502996}
+  - {fileID: 519231174}
