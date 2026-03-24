@@ -20,5 +20,6 @@ public class DeployLionButton : MonoBehaviour
         }
 
         PlacementManager.Instance.SelectLion(lionPrefab); //Pass the stored lion into the Placement Manager
+        PlacementManager.Instance.PlaceAtCurrentTile(); //Open the Deployment Menu
     }
 }

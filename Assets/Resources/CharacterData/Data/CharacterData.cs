@@ -16,7 +16,11 @@ public class CharacterData : ScriptableObject
 
     [Header("Stats")]
     public string toughness; // To be confirmed for both enemy and lion
-
+    
+    //Added properties for shop (Lion Shop)
+    public int price; 
+    public bool isUnlocked; // Added to track if bought
+    
     [Header("Description")]
     [TextArea(3, 10)]
     public string description;
