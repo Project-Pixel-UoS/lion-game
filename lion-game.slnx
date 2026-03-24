@@ -44,4 +44,5 @@
   <Project Path="Unity.Mathematics.Editor.csproj" />
   <Project Path="Unity.Collections.Editor.csproj" />
   <Project Path="Unity.2D.Aseprite.Common.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
 </Solution>
