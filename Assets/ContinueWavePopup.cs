@@ -34,9 +34,9 @@ public class ContinueWavePopup : MonoBehaviour
         SaveSystem.LoadRequested = false; // Ensure we start fresh without loading saved data
         if (GameStatsManager.Instance != null)
         {
-            GameStatsManager.Instance.currentLevel = levelToLoad;
+            GameStatsManager.Instance.currentLevel = levelToLoad;            
+            GameStatsManager.Instance.ResetStats();
         }
-        GameStatsManager.Instance.ResetStats();
         SceneManager.LoadScene("Level" + levelToLoad);
     }
 }
