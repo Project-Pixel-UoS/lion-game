@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 96f2788d49ae6c7459933ee595eedcce
+guid: a3bc263bd2409e54ebae540177237a59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8964781276072916290
-    second: IMG_3824_0
+      213: 2523645676563740
+    second: IMG_3897_0
+  - first:
+      213: 3574268885496021092
+    second: IMG_3897_1
+  - first:
+      213: -2720926690398433907
+    second: IMG_3897_2
+  - first:
+      213: 1347602600013449272
+    second: IMG_3897_3
+  - first:
+      213: -6349954017935151951
+    second: IMG_3897_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_3824_0
+      name: IMG_3897_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3840
-        height: 3840
+        x: 357
+        y: 284
+        width: 1339
+        height: 1437
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2453669b21d496c70800000000000000
-      internalID: 8964781276072916290
+      spriteID: c1d271c0e37f80000800000000000000
+      internalID: 2523645676563740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_3897_1
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 283
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460c8b33d9a5a9130800000000000000
+      internalID: 3574268885496021092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_3897_2
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 285
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d0ce657935d3ad0800000000000000
+      internalID: -2720926690398433907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_3897_3
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 291
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838c130cc65a3b210800000000000000
+      internalID: 1347602600013449272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_3897_4
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 288
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc29e4d67e60e7a0800000000000000
+      internalID: -6349954017935151951
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_3824_0: 8964781276072916290
+      IMG_3897_0: 2523645676563740
+      IMG_3897_1: 3574268885496021092
+      IMG_3897_2: -2720926690398433907
+      IMG_3897_3: 1347602600013449272
+      IMG_3897_4: -6349954017935151951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
