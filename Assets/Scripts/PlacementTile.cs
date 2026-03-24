@@ -1,3 +1,4 @@
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -34,6 +35,8 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler
     // Optional visual object used to preview placement
     public GameObject testVisual;
 
+    public GameObject occupiedObject;
+
     [SerializeField] private Collider2D tileCollider; // Collider for detecting clicks
     
     void Start()
@@ -67,6 +70,11 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler
 
         if (!occupied) {
             tileCollider.enabled = true; // Enable collider if tile is available
+        }
+
+        if (occupiedObject == null)
+        {
+            occupied = false;
         }
     }
 
