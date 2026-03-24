@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ContinueWavePopup : MonoBehaviour
 {
-    private int levelToLoad;
+    public int levelToLoad;
 
     public void Show(int level)
     {
@@ -26,9 +26,8 @@ public class ContinueWavePopup : MonoBehaviour
     }
 
     public void NewGame()
-    {
-        GameStatsManager.Instance.currentLevel = levelToLoad;
-
-        SceneManager.LoadScene("GameScene");
+    {       
+        //GameStatsManager.Instance.currentLevel = levelToLoad;
+        SceneManager.LoadScene("Level" + levelToLoad);
     }
 }

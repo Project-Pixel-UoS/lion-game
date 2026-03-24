@@ -42,6 +42,7 @@ public class LevelCell : MonoBehaviour
                     
                     GameObject popup = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(go => go.name == "ContinuePopupPanel" && go.scene.isLoaded);popup.SetActive(true);
                     popup.SetActive(true);
+                    popup.GetComponent<ContinueWavePopup>().levelToLoad = levelIndex; // Pass the level index to the popups
 
                     return;
                 }
