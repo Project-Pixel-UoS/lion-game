@@ -37,11 +37,6 @@ public class GameStatsManager : MonoBehaviour
 
     #endregion
 
-    void Start()
-    {
-        SaveSystem.Load(); // Load at game start
-    }
-
     // Optional auto-save
     void OnApplicationPause(bool pause)
     {
