@@ -16,7 +16,6 @@
   <Project Path="PsdPlugin.csproj" />
   <Project Path="Unity.Burst.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
-<<<<<<< Tower-Placing-Rework
   <Project Path="Unity.2D.SpriteShape.Editor.csproj" />
   <Project Path="Unity.VisualStudio.Editor.csproj" />
   <Project Path="Unity.PerformanceTesting.csproj" />
@@ -45,7 +44,5 @@
   <Project Path="Unity.Mathematics.Editor.csproj" />
   <Project Path="Unity.Collections.Editor.csproj" />
   <Project Path="Unity.2D.Aseprite.Common.csproj" />
-=======
   <Project Path="Assembly-CSharp-firstpass.csproj" />
->>>>>>> main
 </Solution>
