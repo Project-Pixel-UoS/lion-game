@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave_02
   m_EditorClassIdentifier: 
   enemiesInWave:
-  - enemyPrefab: {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
+  - enemyPrefab: {fileID: 3014706980597061176, guid: c057af438bc53f14ba3bf3e990584576, type: 3}
     count: 2
     spawnRate: 0.5
     direction: 0

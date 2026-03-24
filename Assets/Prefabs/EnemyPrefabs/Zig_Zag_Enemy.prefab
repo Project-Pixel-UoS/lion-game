@@ -185,6 +185,7 @@ MonoBehaviour:
   smoothingRegion: 0.2
   lionKnockbackForce: 1000
   zigZagSpeed: 3
+  correctionTime: 2
 --- !u!114 &-3528592333732778362
 MonoBehaviour:
   m_ObjectHideFlags: 0

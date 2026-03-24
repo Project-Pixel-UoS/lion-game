@@ -4,12 +4,15 @@ using System;
 public class ZigZagEnemyMovementScript : MonoBehaviour
 {
     public float speed = 1f;
-    public GameObject wateringHole;
+    private GameObject wateringHole;
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
     public int health = 1;
     public float smoothingRegion; // This is the range within the enemy does not change direction
     public int lionKnockbackForce; // This is the knockback that the enemy takes after colliding with a lion
     public double zigZagSpeed; // This switches direction of zig zag when enemy hits lane border
+    private double previousZigZagSpeed;
+    public float correctionTime; // Time before enemy movement is corrected if stuck
+    private float timer;
     private bool isVerticalEnemy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -56,6 +59,18 @@ public class ZigZagEnemyMovementScript : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(speed, Convert.ToSingle(zigZagSpeed * speed));
             }
+        }
+
+        timer += Time.deltaTime;
+        if (timer > correctionTime)
+        {
+            if (previousZigZagSpeed == zigZagSpeed)
+            {
+                zigZagSpeed = -zigZagSpeed;
+            }
+            
+            previousZigZagSpeed = zigZagSpeed;
+            timer = 0;
         }
     }
 

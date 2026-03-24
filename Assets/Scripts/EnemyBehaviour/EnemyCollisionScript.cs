@@ -35,37 +35,36 @@ public class EnemyCollisionScript : MonoBehaviour
     /// </remarks>
     void OnCollisionEnter2D(Collision2D other)
     {
+        Rigidbody2D enemyRb = other.gameObject.GetComponent<Rigidbody2D>();
+        Collider2D enemyCol = other.gameObject.GetComponent<Collider2D>();
+
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Crown_Enemy") || other.gameObject.CompareTag("Helmet_Enemy") || other.gameObject.CompareTag("Boots_Enemy"))
         {
-            col = other.gameObject.GetComponent<Collider2D>();
-            rb = other.gameObject.GetComponent<Rigidbody2D>();
-            enemyMovementScript = other.gameObject.GetComponent<EnemyMovementScript>();
+            var movement = other.gameObject.GetComponent<EnemyMovementScript>();
 
-            col.enabled = false;
-            enemyMovementScript.enabled = false;
+            enemyCol.enabled = false;
+            movement.enabled = false;
 
-            StartCoroutine(MoveThenDisable(other.gameObject));
+            StartCoroutine(MoveThenDisable(other.gameObject, enemyRb, movement.speed * 4));
         }
-        if (other.gameObject.CompareTag("Zig_Zag_Enemy"))
+        else if (other.gameObject.CompareTag("Zig_Zag_Enemy"))
         {
-            col = other.gameObject.GetComponent<Collider2D>();
-            rb = other.gameObject.GetComponent<Rigidbody2D>();
-            zigZagEnemyMovementScript = other.gameObject.GetComponent<ZigZagEnemyMovementScript>();
+            var movement = other.gameObject.GetComponent<ZigZagEnemyMovementScript>();
 
-            col.enabled = false;
-            zigZagEnemyMovementScript.enabled = false;
+            enemyCol.enabled = false;
+            movement.enabled = false;
 
-            StartCoroutine(MoveThenDisable(other.gameObject));
+            StartCoroutine(MoveThenDisable(other.gameObject, enemyRb, movement.speed * 4));
         }
     }
 
-    IEnumerator MoveThenDisable(GameObject enemy)
+    IEnumerator MoveThenDisable(GameObject enemy, Rigidbody2D enemyRb, float speed)
     {
-        timer = 0f;
-        float speed = enemyMovementScript.speed;
-        speed = speed * 4;
+        float timer = 0f;
 
-        rb.linearVelocity = new Vector2((enemy.transform.position.x - gameObject.transform.position.x) * speed, (enemy.transform.position.y - gameObject.transform.position.y) * speed);
+        Vector2 direction = (enemy.transform.position - transform.position).normalized;
+        enemyRb.linearVelocity = direction * speed;
+
         while (timer < runningAwayTime)
         {
             timer += Time.deltaTime;

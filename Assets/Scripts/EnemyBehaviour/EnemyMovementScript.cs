@@ -4,7 +4,7 @@ using System;
 public class EnemyMovementScript : MonoBehaviour
 {
     public float speed = 1f;
-    public GameObject wateringHole;
+    private GameObject wateringHole;
     private Rigidbody2D rb; // Rigidbody2D of the enemy object
     public int health = 1;
     public float smoothingRegion; // This is the range within the enemy does not change direction
@@ -52,6 +52,8 @@ public class EnemyMovementScript : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         }
+
+        Debug.Log("Script enabled.");
     }
 
     void OnCollisionEnter2D (Collision2D other)
