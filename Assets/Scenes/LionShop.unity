@@ -343,7 +343,6 @@ GameObject:
   - component: {fileID: 448413895}
   - component: {fileID: 448413894}
   - component: {fileID: 448413893}
-  - component: {fileID: 448413897}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -438,24 +437,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &448413897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448413892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f239b3fa8ec4c4d9b74d7dddf98950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LionShopManager
-  allLions:
-  - {fileID: 11400000, guid: 26e84981381e2eb42883d4d04ec61f82, type: 2}
-  - {fileID: 11400000, guid: e37a9fe724f890c418f7a5994364127a, type: 2}
-  gridParent: {fileID: 1359258070}
-  shopCellPrefab: {fileID: 6932196277763265556, guid: c758ee57b69a0264984602959eae3b8c, type: 3}
-  moneyDisplay: {fileID: 2022585017}
 --- !u!1 &492411306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,8 +1212,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 582757706}
   m_HandleRect: {fileID: 582757705}
   m_Direction: 2
-  m_Value: -0.0000003755444
-  m_Size: 0.81998616
+  m_Value: 1
+  m_Size: 0.81999457
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1308,7 +1289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 325.04913}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 1805.773}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1391653109
