@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LionShopManager : MonoBehaviour
 {
@@ -38,5 +39,9 @@ public class LionShopManager : MonoBehaviour
             cell.UpdateUI();
         }
 
+    }
+    public void ExitShop()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
