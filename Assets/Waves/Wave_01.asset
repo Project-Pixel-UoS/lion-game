@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Wave_01
   m_EditorClassIdentifier: 
   enemiesInWave:
-  - enemyPrefab: {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
+  - enemyPrefab: {fileID: 3014706980597061176, guid: 8fe81f59118b32d4483a950dfc7cb3f6, type: 3}
     count: 2
     spawnRate: 0.5
     direction: 0
-  - enemyPrefab: {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
+  - enemyPrefab: {fileID: 3014706980597061176, guid: 8fe81f59118b32d4483a950dfc7cb3f6, type: 3}
     count: 2
     spawnRate: 0.5
     direction: 0
