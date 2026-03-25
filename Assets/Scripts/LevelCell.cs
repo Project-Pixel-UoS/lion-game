@@ -26,7 +26,7 @@ public class LevelCell : MonoBehaviour
 
     public void OnClick()
     {
-        if (levelIndex > 1) {
+        if (levelIndex > 2) {
             Debug.Log("Level " + levelIndex + " clicked!");
         }
         else

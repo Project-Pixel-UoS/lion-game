@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 ///<summary>
 /// File that tracks game statistics throughout a run
@@ -36,6 +37,26 @@ public class GameStatsManager : MonoBehaviour
     }
 
     #endregion
+
+    //to do - have it work even if scene is named differently
+    private void Start()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName.StartsWith("Level"))
+        {
+            string numberPart = sceneName.Substring(5); // remove "Level"
+
+            if (int.TryParse(numberPart, out int levelNumber))
+            {
+                currentLevel = levelNumber;
+            }
+            else
+            {
+                Debug.LogError("Failed to parse level number from scene name: " + sceneName);
+            }
+        }
+    }
 
     // Optional auto-save
     void OnApplicationPause(bool pause)
