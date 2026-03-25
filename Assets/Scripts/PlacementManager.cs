@@ -88,7 +88,6 @@ public class PlacementManager : MonoBehaviour
 
         placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion
         cancelButton.SetActive(false); //Close the Cancel Button after placing a lion
-
         //Call the Cancel Function so that only one Lion can be placed at a time
         Cancel(); 
     }
@@ -98,8 +97,10 @@ public class PlacementManager : MonoBehaviour
         if (currentTile.occupied) return; //End Function if a lion isn't selected or the tile is occupied
 
         //Spawn the stored Gameobject at the tile's position
-        Instantiate(selectedLion, currentTile.transform.position, currentTile.transform.rotation);
+        GameObject newLion = Instantiate(selectedLion, currentTile.transform.position, currentTile.transform.rotation);
+        
         currentTile.occupied = true;
+        currentTile.occupiedObject = newLion;
 
         currentTile.GetComponent<Collider2D>().enabled = false; //Re-enable the tile's collider after placing a lion
 

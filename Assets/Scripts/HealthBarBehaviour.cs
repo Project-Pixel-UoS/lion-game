@@ -19,10 +19,10 @@ public class HealthBarBehaviour : MonoBehaviour
     void Update()
     {
         // For testing purposes, decrease health when the space key is pressed
-        if (Input.GetMouseButtonDown(0)) // Left mouse button click
-        {
-            LoseHealth(1f); // Decrease health by 1
-        }
+        //if (Input.GetMouseButtonDown(0)) // Left mouse button click
+        //{
+            //LoseHealth(1f); // Decrease health by 1
+        //}
     }
 
     void LoseHealth(float damage)
