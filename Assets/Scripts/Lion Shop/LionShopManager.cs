@@ -3,21 +3,17 @@ using UnityEngine;
 
 public class LionShopManager : MonoBehaviour
 {
-
-    [Header("Temp Currency")] public int currentCurrency = 0;
-    public MoneyDisplay moneyDisplay;
-    
-    
     [Header("Lion Data")]
-    public List<CharacterData> allLions; 
+    public List<CharacterData> allLions;
 
     [Header("UI References")]
-    public Transform gridParent; 
+    public Transform gridParent;
     public GameObject shopCellPrefab;
+    public MoneyDisplay moneyDisplay;
 
     void Start()
     {
-        moneyDisplay.UpdateCurrencyUI(currentCurrency);
+        moneyDisplay.UpdateCurrencyUI(PermanentCurrencyManager.Instance.CurrentPermanentCurrency);
         PopulateShop();
     }
 
@@ -30,17 +26,15 @@ public class LionShopManager : MonoBehaviour
             cellScript.Initialize(lion, this);
         }
     }
-    
+
     public void TryBuyLion(CharacterData lion, LionShopCell cell)
     {
-        if (currentCurrency >= lion.price && !lion.isUnlocked)
+        if (!lion.isUnlocked && PermanentCurrencyManager.Instance.SpendPermanentCurrency(lion.price))
         {
-            currentCurrency -= lion.price;
-            
             lion.isUnlocked = true;
-            
+
             Debug.Log($"Unlocked: {lion.characterName}");
-            moneyDisplay.UpdateCurrencyUI(currentCurrency);
+            moneyDisplay.UpdateCurrencyUI(PermanentCurrencyManager.Instance.CurrentPermanentCurrency);
             cell.UpdateUI();
         }
 
