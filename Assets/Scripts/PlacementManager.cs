@@ -49,6 +49,7 @@ public class PlacementManager : MonoBehaviour
 
         //Spawn the stored Gameobject at the tile's position
         Instantiate(selectedLion, tile.transform.position, tile.transform.rotation);
+        fruit -= selectedLion.GetComponent<PlacementCost>().fruitCost;
         tile.occupied = true;
 
         placementPromptPanel.SetActive(false); //Close the Placement Prompt Panel after placing a lion

@@ -54,6 +54,6 @@ public class FruitTreeLifeCycle : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
-            }
+        }
     }
 }
