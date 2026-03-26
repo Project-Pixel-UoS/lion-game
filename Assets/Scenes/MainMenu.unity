@@ -1739,7 +1739,7 @@ GameObject:
   - component: {fileID: 1830463451}
   - component: {fileID: 1830463450}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: SoundSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1757,6 +1757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb3d00b52fe144438f873988ffebda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  sfxGroup: {fileID: 4662506383118260635, guid: 132f4399f03ca4c459c96fadeffce1d3, type: 2}
+  musicGroup: {fileID: 1333132378659414628, guid: 132f4399f03ca4c459c96fadeffce1d3, type: 2}
   sfxDefinitions:
   - sfxType: 1
     clip: {fileID: 8300000, guid: f81e941dec7fd20288b3f0690eafa907, type: 3}

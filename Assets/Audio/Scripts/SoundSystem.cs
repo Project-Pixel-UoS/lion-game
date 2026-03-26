@@ -1,9 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundSystem : MonoBehaviour
 {
     private static SoundSystem instance;
+
+    [SerializeField] private AudioMixerGroup sfxGroup;
+    [SerializeField] private AudioMixerGroup musicGroup;
 
     public static SoundSystem Instance
     {
@@ -15,7 +19,7 @@ public class SoundSystem : MonoBehaviour
     private SfxDefinition[] sfxDefinitions;
 
     private Dictionary<SfxType, SfxDefinition> sfxMap;
-    private AudioSource audioSource;
+    private AudioSource sfxAudioSource;
 
     private void Awake()
     {
@@ -28,8 +32,9 @@ public class SoundSystem : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
+        sfxAudioSource = gameObject.AddComponent<AudioSource>();
+        sfxAudioSource.playOnAwake = false;
+        sfxAudioSource.outputAudioMixerGroup = sfxGroup;
 
         sfxMap = new Dictionary<SfxType, SfxDefinition>();
 
@@ -62,7 +67,7 @@ public class SoundSystem : MonoBehaviour
     {
         if (sfxMap.TryGetValue(type, out var sfx))
         {
-            audioSource.PlayOneShot(sfx.clip, sfx.volume);
+            sfxAudioSource.PlayOneShot(sfx.clip, sfx.volume);
         }
     }
 }
