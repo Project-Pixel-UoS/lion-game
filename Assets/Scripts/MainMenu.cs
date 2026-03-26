@@ -5,7 +5,6 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SoundSystem.Instance.PlaySfx(SfxType.Test);
         SceneManager.LoadScene("LevelSelect");
     }
 
