@@ -111,10 +111,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementScript
   speed: 1
-  wateringHole: {fileID: 0}
   health: 1
   smoothingRegion: 0.2
   lionKnockbackForce: 1000
+  TagList:
+  - Zig_Zag_Enemy
+  - Helmet_Enemy
+  - Boots_Enemy
+  - Enemy
 --- !u!114 &-2542128556603835011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,8 +243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d68b74ff9c919499167a00f98ef94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementScript
-  speed: 1
-  wateringHole: {fileID: 0}
+  speed: 0.5
   health: 1
   smoothingRegion: 0
   lionKnockbackForce: 0
+  TagList:
+  - Zig_Zag_Enemy
+  - Helmet_Enemy
+  - Boots_Enemy
+  - Enemy
