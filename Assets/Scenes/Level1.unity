@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivotPoint: {fileID: 74227671}
-  rotationSpeed: 0.5
+  rotationSpeed: 0.6
   invertControls: 1
 --- !u!114 &112320173
 MonoBehaviour:

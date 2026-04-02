@@ -180,12 +180,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9eddcab44ffaf140b0cf3072bc6c74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   health: 1
   smoothingRegion: 0.2
   lionKnockbackForce: 1000
-  zigZagSpeed: 3
+  zigZagSpeed: 4
   correctionTime: 2
+  TagList:
+  - Zig_Zag_Enemy
+  - Helmet_Enemy
+  - Boots_Enemy
+  - Enemy
 --- !u!114 &-3528592333732778362
 MonoBehaviour:
   m_ObjectHideFlags: 0
