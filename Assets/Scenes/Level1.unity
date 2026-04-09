@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 2
 --- !u!1 &112320168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnPoint
-  group: 0
+  group: 3
 --- !u!1001 &650430832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 2
 --- !u!224 &712101742 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5205481321243488669, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
@@ -2079,7 +2079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 2
 --- !u!1 &745718732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,7 +2575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 3
 --- !u!1001 &1047932185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3592,7 +3592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 1
 --- !u!1001 &1478503634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4286,7 +4286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnPoint
-  group: 0
+  group: 3
 --- !u!1001 &1635042846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5750,7 +5750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 1
 --- !u!1001 &1980655038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6197,7 +6197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03861fec592be34da9d6e6f249f9bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: 0
+  group: 1
 --- !u!1001 &1657197967293340503
 PrefabInstance:
   m_ObjectHideFlags: 0
