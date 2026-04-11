@@ -37,7 +37,7 @@ public class CharacterData : ScriptableObject
     /// Saved to PLayerPrefs so it persists across game sessions.
     /// Key is unique per asset name so each lion has its own save lot.
     /// </summary>
-    public tool isUnlocked
+    public bool isUnlocked
     {
         get => PlayerPrefs.GetInt($"Unlocked_{name}", 0) == 1;
         set
