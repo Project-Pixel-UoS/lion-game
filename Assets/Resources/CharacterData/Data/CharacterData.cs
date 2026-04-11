@@ -2,6 +2,7 @@ using UnityEngine;
 
 /// <summary>
 /// Holds data for a single character/enemy in the game.
+/// For lions, also stores the prefab to spawn when placed and shop unlock state.
 /// </summary>
 /// <remarks>
 /// Maintained by: Dayini
@@ -16,17 +17,36 @@ public class CharacterData : ScriptableObject
 
     [Header("Stats")]
     public string toughness; // To be confirmed for both enemy and lion
-    
-    //Added properties for shop (Lion Shop)
-    public int price; 
-    public bool isUnlocked; // Added to track if bought
-    
+
     [Header("Description")]
     [TextArea(3, 10)]
     public string description;
 
     [Header("Category")]
     public CharacterType characterType;
+
+    [Header("Shop & Placement (Lions only)")]
+    [Tooltip("The prefab that gets placed on a tile when this lion is deployed.")]
+    public GameObject lionPrefab;
+
+    [Tooltip("Cost in permanent currency to unlock in the shop.")]
+    public int price;
+
+    /// <summary>
+    /// Whether this lion has been purchased in the shop.
+    /// Saved to PLayerPrefs so it persists across game sessions.
+    /// Key is unique per asset name so each lion has its own save lot.
+    /// </summary>
+    public tool isUnlocked
+    {
+        get => PlayerPrefs.GetInt($"Unlocked_{name}", 0) == 1;
+        set
+        {
+            PlayerPrefs.SetInt($"Unlocked_{name}", value ? 1 : 0);
+            PlayerPrefs.Save();
+        }
+    }
+
 }
 
 /// <summary>
