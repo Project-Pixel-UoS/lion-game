@@ -11,22 +11,8 @@ using TMPro;
 public class DeployLionButton : MonoBehaviour
 {
     public GameObject lionPrefab; //This stores the lion to be selected as a Gameobject
-    public TextMeshProUGUI fruitCostWarningText; // Warning text if player doesn't have enough fruit
-    private float timer;
-    private float displayTime = 2.5f; // The time to display the warning text for
-
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer > displayTime)
-        {
-            fruitCostWarningText.enabled = false;
-        }
-    }
 
     public void SelectLion() {
-        timer = 0f;
-
         if (lionPrefab == null) //Do nothing if there is no stored Lion
         {
             Debug.LogWarning("DeployLionButton: No lionPrefab assigned.");
@@ -36,7 +22,6 @@ public class DeployLionButton : MonoBehaviour
         if (PlacementManager.Instance.fruit < lionPrefab.GetComponent<PlacementCost>().fruitCost)
         {
             Debug.Log("Not enough fruit!");
-            fruitCostWarningText.enabled = true;
         }
         else
         {
