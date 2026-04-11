@@ -1,30 +1,41 @@
-
-using System;
 using UnityEngine;
 
 public class EnemyIndicator : MonoBehaviour
 {
     public LaneTrigger[] lanes;
-    public GameObject[] arrows;
+    public GameObject globalLeftArrow;
+    public GameObject globalRightArrow;
+    
     public Transform cameraTransform;
-    public float lookThreshold = 0.8f;
 
     void Update()
     {
+        bool enemiesToLeft = false;
+        bool enemiesToRight = false;
+
         Vector3 camForward = cameraTransform.up;
-        camForward.z = 0;
+        camForward.z = 0; 
         camForward.Normalize();
 
-        for (int i = 0; i < lanes.Length; i++)
+        foreach (LaneTrigger lane in lanes)
         {
-            float dot = Vector3.Dot(camForward, lanes[i].laneDirection.normalized);
+            if (lane.enemyCount > 0)
+            {
+                Vector3 dirToLane = lane.laneDirection.normalized;
+                dirToLane.z = 0;
 
-
-            bool isLookingAtLane = dot > lookThreshold;
-
-            bool shouldShowArrow = (lanes[i].enemyCount > 0) && !isLookingAtLane;
-            
-            arrows[i].SetActive(shouldShowArrow);
+                float relativeAngle = Vector2.SignedAngle(camForward, dirToLane);
+                if (relativeAngle < -30) 
+                {
+                    enemiesToRight = true;
+                }
+                else if (relativeAngle > 30) 
+                {
+                    enemiesToLeft = true;
+                }
+            }
         }
+        globalLeftArrow.SetActive(enemiesToLeft);
+        globalRightArrow.SetActive(enemiesToRight);
     }
 }
