@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 /// <summary>
@@ -20,13 +21,20 @@ public class PlacementManager : MonoBehaviour
 
     [SerializeField] private GameObject placementPromptPanel; //Stores the Placement Prompt Panel Gameobject so that it can be toggled on/off
     [SerializeField] private GameObject cancelButton; //Stores the Cancel Button Gameobject so that it can be toggled on/off
+    [SerializeField] private TextMeshProUGUI fruitCountText; // The player's current fruit count
 
     //Is TRUE if the player is deciding which tile to place a lion
     public bool isPlacing; 
 
+    void Update()
+    {
+        fruitCountText.text = "Fruit: " + fruit;
+    }
+
     void Awake()
     {
         Instance = this; //Creates the Singleton
+        fruitCountText = GameObject.Find("FruitCounter").GetComponent<TextMeshProUGUI>();
     }
 
     public void SelectLion(GameObject lion) //Allows the selected lion in deployment menu to be stored
