@@ -5,6 +5,7 @@ public class LaneTrigger : MonoBehaviour
 {
     public int enemyCount = 0;
     public string[] TagList = {"Zig_Zag_Enemy", "Helmet_Enemy", "Boots_Enemy", "Enemy"};
+    public Vector3 laneDirection;
 
     void OnTriggerEnter2D(Collider2D other)
     {

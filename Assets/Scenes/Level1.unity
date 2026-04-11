@@ -356,6 +356,7 @@ MonoBehaviour:
   - Helmet_Enemy
   - Boots_Enemy
   - Enemy
+  laneDirection: {x: 0, y: 5, z: 0}
 --- !u!1 &74227668
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +758,7 @@ Transform:
   m_GameObject: {fileID: 112320168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.66, z: -10}
+  m_LocalPosition: {x: 0, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -816,6 +817,8 @@ MonoBehaviour:
   - {fileID: 106146882}
   - {fileID: 1438945103}
   - {fileID: 134564282}
+  cameraTransform: {fileID: 112320171}
+  lookThreshold: 0.8
 --- !u!1 &134564282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,6 +1888,7 @@ MonoBehaviour:
   - Helmet_Enemy
   - Boots_Enemy
   - Enemy
+  laneDirection: {x: 5, y: 0, z: 0}
 --- !u!1001 &540263038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2262,6 +2266,7 @@ MonoBehaviour:
   - Helmet_Enemy
   - Boots_Enemy
   - Enemy
+  laneDirection: {x: 0, y: -5, z: 0}
 --- !u!1001 &650430832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4154,6 +4159,7 @@ MonoBehaviour:
   - Helmet_Enemy
   - Boots_Enemy
   - Enemy
+  laneDirection: {x: -5, y: 0, z: 0}
 --- !u!4 &1315032064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4487247722745047995, guid: ca53f37fbeb42764e884c5e9b200a8a8, type: 3}
