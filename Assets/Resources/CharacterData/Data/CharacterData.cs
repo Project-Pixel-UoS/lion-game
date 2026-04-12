@@ -15,6 +15,10 @@ public class CharacterData : ScriptableObject
     public Sprite characterSprite;
 
     [Header("Stats")]
+    public int characterHealth;
+    public float attackRange;
+    public float attackSpeed;
+    public int attackDamage;
     public string toughness; // To be confirmed for both enemy and lion
     
     //Added properties for shop (Lion Shop)
