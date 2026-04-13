@@ -31,7 +31,7 @@ public class LionEnergyMenuLoader : MonoBehaviour
     [Tooltip("Shown when the player has no lions unlocked yet.")]
     public GameObject noLionsMessage;
 
-    void Start()
+    void OnEnable()
     {
         // Auto-populate lionPrefabs from Resources on startup,
         // replacing the manually assigned list with only unlocked lions.
@@ -54,6 +54,7 @@ public class LionEnergyMenuLoader : MonoBehaviour
             .Where(c => c.lionPrefab != null)
             .Select(c => c.lionPrefab)
             .ToList();
+    
 
         noLionsMessage?.SetActive(lionPrefabs.Count == 0);
     }
@@ -76,7 +77,6 @@ public class LionEnergyMenuLoader : MonoBehaviour
                 DeployLionButton button = buttonObj.GetComponent<DeployLionButton>();
                 button.lionPrefab = lion;
                 button.GetComponentInChildren<TMPro.TMP_Text>().text = lion.name; // Set button text to the name of the lion prefab
-
             }
         }
         else if (type == DeploymentMenuType.Energy)
