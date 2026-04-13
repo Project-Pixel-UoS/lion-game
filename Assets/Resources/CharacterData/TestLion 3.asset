@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Regular Lion 4
   characterSprite: {fileID: 3793069108295666864, guid: 54ff8fe9097274a9694d708d6007e6ad, type: 3}
   toughness: Low
-  price: 1000
-  isUnlocked: 0
   description: This lion can only moves left and right.
   characterType: 0
+  lionPrefab: {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
+  price: 1000

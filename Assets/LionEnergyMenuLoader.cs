@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 
 /// <summary>
@@ -8,7 +9,8 @@ using TMPro;
 /// This script should be attached to the parent GameObject of the buttons in the deployment menu,
 /// and will spawn buttons based on the type of menu requested (Lion or Energy).
 /// The items to be spawned in the menu should be assigned in the Inspector as lists of GameObjects (lionPrefabs and energyPrefabs).
-/// When a button is clicked, it will pass the corresponding prefab to the PlacementManager for placement
+/// When a button is clicked, it will pass the corresponding prefab to the PlacementManager for placement.
+/// Lion buttons are filtered to only show lions the player has unlocked in the shop.
 /// </summary>
 /// <remarks>
 /// Maintained by: Michael Edems-Eze
@@ -25,6 +27,38 @@ public class LionEnergyMenuLoader : MonoBehaviour
     public List<GameObject> lionPrefabs;
     public List<GameObject> energyPrefabs;
 
+    [Header("Empty State (optional)")]
+    [Tooltip("Shown when the player has no lions unlocked yet.")]
+    public GameObject noLionsMessage;
+
+    void OnEnable()
+    {
+        // Auto-populate lionPrefabs from Resources on startup,
+        // replacing the manually assigned list with only unlocked lions.
+        LoadUnlockedLionsFromResource();
+        SpawnButtons(menuTypeRequested);
+    }
+
+    /// <summary>
+    /// Load CharacterData from Resources/CharacterData/ and fills lionPrefabs
+    /// with only the prefabs belonging to lions the player has unlocked.
+    /// This runs once on Start - the manual Inspector list is overridden.
+    /// </summary>
+    void LoadUnlockedLionsFromResource()
+    {
+        CharacterData[] unlockedLions = Resources.LoadAll<CharacterData>("CharacterData")
+            .Where(c => c.characterType == CharacterType.Lion && c.isUnlocked)
+            .ToArray();
+
+        lionPrefabs = unlockedLions
+            .Where(c => c.lionPrefab != null)
+            .Select(c => c.lionPrefab)
+            .ToList();
+    
+
+        noLionsMessage?.SetActive(lionPrefabs.Count == 0);
+    }
+
     // Spawns buttons in the menu based on the requested menu type and assigned prefabs
     void SpawnButtons(DeploymentMenuType type)
     {
@@ -37,13 +71,12 @@ public class LionEnergyMenuLoader : MonoBehaviour
 
         if (type == DeploymentMenuType.Lion)
         {
-             foreach (GameObject lion in lionPrefabs)
+            foreach (GameObject lion in lionPrefabs)
             {
                 GameObject buttonObj = Instantiate(buttonPrefab, transform);
                 DeployLionButton button = buttonObj.GetComponent<DeployLionButton>();
                 button.lionPrefab = lion;
                 button.GetComponentInChildren<TMPro.TMP_Text>().text = lion.name; // Set button text to the name of the lion prefab
-                 
             }
         }
         else if (type == DeploymentMenuType.Energy)
