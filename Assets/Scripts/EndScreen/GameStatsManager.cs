@@ -58,10 +58,19 @@ public class GameStatsManager : MonoBehaviour
         }
     }
 
-    // Optional auto-save
+    // Optional auto-save when game is paused, loses focus, or quits
+    // Loses focus means when the player clicks away from the game window or opens another application, etc.
     void OnApplicationPause(bool pause)
     {
         if (pause)
+        {
+            SaveSystem.Save();
+        }
+    }
+
+    void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
         {
             SaveSystem.Save();
         }
