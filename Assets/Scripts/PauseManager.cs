@@ -51,6 +51,7 @@ public class PauseManager : MonoBehaviour
     public void LoadMainMenu(string sceneName)
     {
         SetPaused(false);
+        SaveSystem.Save();
         SceneManager.LoadScene(sceneName);
     }
 }
