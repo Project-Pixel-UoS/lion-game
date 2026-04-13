@@ -16,6 +16,12 @@ public class CharacterDetailPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Button closeButton;
 
+    [Header("Stats")]
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI attackRangeText;
+    [SerializeField] private TextMeshProUGUI attackSpeedText;
+    [SerializeField] private TextMeshProUGUI attackDamageText;
+
     [Header("Input Blocking")]
     [SerializeField] private GameObject inputBlocker;
 
@@ -37,6 +43,11 @@ public class CharacterDetailPanel : MonoBehaviour
     {
         nameText.text = data.characterName;
         descriptionText.text = $"Toughness: {data.toughness}\n\n{data.description}";
+
+        healthText.text = $"Health: {data.characterHealth}";
+        attackRangeText.text = $"Attack Range: {data.attackRange} m";
+        attackSpeedText.text = $"Attack Speed: {data.attackSpeed} /s";
+        attackDamageText.text = $"Attack Damage: {data.attackDamage}";
 
         if (data.characterSprite != null)
         {
