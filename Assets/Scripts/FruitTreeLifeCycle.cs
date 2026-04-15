@@ -55,7 +55,7 @@ public class FruitTreeLifeCycle : MonoBehaviour
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-                if (hit.collider != null && hit.collider.name == "Fruit Tree(Clone)")
+                if (hit.collider != null && hit.collider.gameObject == gameObject)
                 {
                     placementManagerScript.fruit += this.fruit;
                     Destroy(gameObject);
