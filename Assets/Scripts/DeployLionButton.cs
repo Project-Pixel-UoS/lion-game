@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// This program stores the lion that is to be placed, and passes it to the Placement Manager when the SelectLion() function is called
@@ -12,14 +13,19 @@ public class DeployLionButton : MonoBehaviour
     public GameObject lionPrefab; //This stores the lion to be selected as a Gameobject
 
     public void SelectLion() {
-
         if (lionPrefab == null) //Do nothing if there is no stored Lion
         {
             Debug.LogWarning("DeployLionButton: No lionPrefab assigned.");
             return;
         }
 
-        PlacementManager.Instance.SelectLion(lionPrefab); //Pass the stored lion into the Placement Manager
-        PlacementManager.Instance.PlaceAtCurrentTile(); //Open the Deployment Menu
+        if (PlacementManager.Instance.fruit < lionPrefab.GetComponent<PlacementCost>().fruitCost)
+        {
+            Debug.Log("Not enough fruit!");
+        }
+        else
+        {
+            PlacementManager.Instance.SelectLion(lionPrefab); //Pass the stored lion into the Placement Manager
+        }
     }
 }

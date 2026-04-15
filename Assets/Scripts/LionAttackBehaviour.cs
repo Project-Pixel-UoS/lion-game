@@ -8,9 +8,14 @@ public class LionAttackBehaviour : MonoBehaviour
     public int rayCount = 20;
 
     //Lion Attack Parameters
-    public int attackDamage = 1; // Base damage of the lion's attack, can be adjusted in the Unity Inspector
+    public float attackDamage = 1f; // Base damage of the lion's attack, can be adjusted in the Unity Inspector
     public float rechargeTime = 1f;
     private float lastAttackTime = 0f;
+
+    [SerializeField] private int projectilePiercing = 1; //How many enemies the projectile can pass through.
+    [SerializeField] private float projectileAoeRadius = 1.5f; //The radius of enemies the projectile also damages after hitting one.
+    [SerializeField] private float projectileScale = 1f;
+    [SerializeField] private float projectileSlowFactor = 0f; //Percentage (0-1) for how much the projectile slows the enemy
 
     public GameObject roarProjectilePrefab; // Reference to the projectile prefab
     public Vector2 projectileSpawnOffset; // Offset from where the projectile will be spawned
@@ -39,9 +44,9 @@ public class LionAttackBehaviour : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if (hit.collider.CompareTag("Enemy"))
+                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Crown_Enemy") || hit.collider.CompareTag("Boots_Enemy") || hit.collider.CompareTag("Helmet_Enemy") || hit.collider.CompareTag("Zig_Zag_Enemy"))
                 {
-                    DoRoarAttack(Vector2.SignedAngle(Vector2.up, hit.point - (Vector2)transform.position));
+                    DoRoarAttack(Vector2.SignedAngle(Vector2.up, hit.point - (Vector2)transform.position), hit.collider.CompareTag("Boots_Enemy"));
                     Debug.DrawRay(transform.position, hit.point, Color.green);
                 }                
             }
@@ -52,12 +57,11 @@ public class LionAttackBehaviour : MonoBehaviour
         }
     }
 
-    void DoRoarAttack(float attackAngle)
+    void DoRoarAttack(float attackAngle, bool isBootsEnemy)
     {
         if (lastAttackTime >= rechargeTime && ammunition > 0)
         {
             // Implement attack logic here, e.g., apply damage to enemies in the cone
-            Debug.Log("Attacking with damage: " + attackDamage);
             lastAttackTime = 0f; // Reset attack timer
             ammunition--; // Decrease ammunition count
 
@@ -66,6 +70,13 @@ public class LionAttackBehaviour : MonoBehaviour
             if (projectileBehaviour != null)
             {
                 projectileBehaviour.SetDamage(attackDamage); // Set the damage for the projectile using Lion Data
+                projectileBehaviour.SetAoeRadius(projectileAoeRadius);
+                projectileBehaviour.SetPiercing(projectilePiercing);
+                projectileBehaviour.SetScale(projectileScale);
+                if (!isBootsEnemy)
+                {
+                    projectileBehaviour.SetSlowFactor(projectileSlowFactor);
+                }
             }
         }
     }

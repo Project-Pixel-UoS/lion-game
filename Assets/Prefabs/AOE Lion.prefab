@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 4070051645571815608}
   - component: {fileID: 1118229868532895396}
   m_Layer: 0
-  m_Name: Basic Lion
+  m_Name: AOE Lion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6135221329732604567, guid: cd8010f4534b5eb4f9c2a647df160624, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.08059138, g: 0.735849, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -365,9 +365,9 @@ MonoBehaviour:
   coneAngle: 36.4
   rayCount: 20
   attackDamage: 0.5
-  rechargeTime: 1
+  rechargeTime: 2
   projectilePiercing: 1
-  projectileAoeRadius: 0
+  projectileAoeRadius: 3
   projectileScale: 0.2
   projectileSlowFactor: 0.8
   roarProjectilePrefab: {fileID: 612404576898284485, guid: 2629c8989598ca2489e3f27d34a78840, type: 3}
@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfaa8a56faa9524795151761c17756d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fruitCost: 5
+  fruitCost: 8
 --- !u!1 &6621853650924837467
 GameObject:
   m_ObjectHideFlags: 0

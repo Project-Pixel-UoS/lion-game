@@ -18,11 +18,6 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Settings");
     }
 
-    public void OpenShop()
-    {
-        SceneManager.LoadScene("LionShop");
-    }
-
     public void QuitGame()
     {
         Application.Quit();

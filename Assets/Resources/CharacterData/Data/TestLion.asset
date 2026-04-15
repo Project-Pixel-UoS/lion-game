@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df79bfecff4e07e4289dcdf33dacfd8f, type: 3}
-  m_Name: Wave_02
+  m_Script: {fileID: 11500000, guid: 6c29e3505edb7184f85617ea38f8f3e7, type: 3}
+  m_Name: TestLion
   m_EditorClassIdentifier: 
-  enemiesInWave:
-  - enemyPrefab: {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
-    count: 2
-    spawnRate: 0.5
-    direction: 0
-  timeBeforeNextWave: 5
+  characterName: Regular Lion
+  characterSprite: {fileID: 0}
+  toughness: Low
+  description: This lion can only moves left and right.
+  characterType: 0

@@ -14,6 +14,5 @@ public class EnemySpawnInfo
 public class WaveData : ScriptableObject
 {
     public List<EnemySpawnInfo> enemiesInWave;
-    public int permanentCurrencyReward = 1;
     public float timeBeforeNextWave = 5f;
 }
