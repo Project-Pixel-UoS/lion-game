@@ -1,15 +1,28 @@
 using UnityEngine;
+using Unityengine.UI;
+using System.Collections.Generic;
 
 public class TutorialManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [System.Serializable]
+    public class TutorialStep
     {
-        
+        public string message;
+        public Transform highlightTarget;
     }
 
-    // Update is called once per frame
-    void Update()
+    public TutorialStep[] steps;
+
+    public int step = 0;
+
+    public HighlightCircle highlight;
+    public TutorialUI ui;
+
+    public Transform fruitTile;
+    public Transform lionTile;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
         
     }
