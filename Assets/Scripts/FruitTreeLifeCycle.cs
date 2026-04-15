@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class FruitTreeLifeCycle : MonoBehaviour
 {
     private GameObject placementManager;
     private PlacementManager placementManagerScript;
+    public TextMeshProUGUI fruitCounter; // Reference to the fruit counter text
     public float lifetime; // The full lifetime of the tree until it starts to die
     public float growingInterval; // The time between each fruit being created
     public float overripeTime; // Time until the tree becomes overripe
@@ -17,6 +19,7 @@ public class FruitTreeLifeCycle : MonoBehaviour
     {
         placementManager = PlacementManager.Instance.gameObject;
         placementManagerScript = placementManager.GetComponent<PlacementManager>();
+        fruitCounter.text = "Fruit: 0";
     }
 
     void Update()
@@ -32,6 +35,7 @@ public class FruitTreeLifeCycle : MonoBehaviour
             {
                 growingTimer = 0;
                 this.fruit += 1;
+                fruitCounter.text = "Fruit: " + this.fruit;
             }
         }
         else // Wait a bit until tree dies
