@@ -44,9 +44,9 @@ public class LionAttackBehaviour : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if (hit.collider.CompareTag("Enemy"))
+                if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Crown_Enemy") || hit.collider.CompareTag("Boots_Enemy") || hit.collider.CompareTag("Helmet_Enemy") || hit.collider.CompareTag("Zig_Zag_Enemy"))
                 {
-                    DoRoarAttack(Vector2.SignedAngle(Vector2.up, hit.point - (Vector2)transform.position));
+                    DoRoarAttack(Vector2.SignedAngle(Vector2.up, hit.point - (Vector2)transform.position), hit.collider.CompareTag("Boots_Enemy"));
                     Debug.DrawRay(transform.position, hit.point, Color.green);
                 }                
             }
@@ -57,7 +57,7 @@ public class LionAttackBehaviour : MonoBehaviour
         }
     }
 
-    void DoRoarAttack(float attackAngle)
+    void DoRoarAttack(float attackAngle, bool isBootsEnemy)
     {
         if (lastAttackTime >= rechargeTime && ammunition > 0)
         {
@@ -73,7 +73,10 @@ public class LionAttackBehaviour : MonoBehaviour
                 projectileBehaviour.SetAoeRadius(projectileAoeRadius);
                 projectileBehaviour.SetPiercing(projectilePiercing);
                 projectileBehaviour.SetScale(projectileScale);
-                projectileBehaviour.SetSlowFactor(projectileSlowFactor);
+                if (!isBootsEnemy)
+                {
+                    projectileBehaviour.SetSlowFactor(projectileSlowFactor);
+                }
             }
         }
     }
