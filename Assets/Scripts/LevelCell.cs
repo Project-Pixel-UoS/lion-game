@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class LevelCell : MonoBehaviour
 {
@@ -25,11 +26,34 @@ public class LevelCell : MonoBehaviour
 
     public void OnClick()
     {
-        if (levelIndex > 1) {
+        if (levelIndex > 2) {
             Debug.Log("Level " + levelIndex + " clicked!");
         }
         else
         {
+            if (SaveSystem.SaveExists())
+            {
+                SaveSystem.SaveData data = SaveSystem.GetSaveData();
+                Debug.Log("Save exists. Current saved level: " + data.gameStats.currentLevel);
+                
+                if (data.gameStats.currentLevel == levelIndex)
+                {
+                    Debug.Log("Save exists for this level. Showing popup.");
+                    
+                    GameObject popup = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(go => go.name == "ContinuePopupPanel" && go.scene.isLoaded);popup.SetActive(true);
+                    popup.SetActive(true);
+                    popup.GetComponent<ContinueWavePopup>().levelToLoad = levelIndex; // Pass the level index to the popups
+
+                    return;
+                }
+            }
+
+            if (GameStatsManager.Instance != null)
+            {
+                Debug.Log("Setting current saved level to: " + (levelIndex));
+                GameStatsManager.Instance.currentLevel = levelIndex; // Set the current level in the GameStatsManager
+            }            
+
             SceneManager.LoadScene("Level" + levelIndex);
         }
     }

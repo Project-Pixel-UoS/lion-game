@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Crown_Enemy
+  - Watering_Hole
+  - Lion
+  - Lane_Border
+  - Helmet_Enemy
+  - Boots_Enemy
+  - Zig_Zag_Enemy
+  - Lane_Body
   layers:
   - Default
   - TransparentFX
@@ -12,8 +20,8 @@ TagManager:
   - Lanes
   - Water
   - UI
-  - 
-  - 
+  - Tiles
+  - Enemies
   - 
   - 
   - 
@@ -39,8 +47,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2166264865
+    locked: 0
+  - name: Watering Hole
+    uniqueID: 1222105533
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trees
+    uniqueID: 1012549675
     locked: 0
   m_RenderingLayers:
   - Default

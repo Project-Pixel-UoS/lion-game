@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 ///<summary>
 /// File that tracks game statistics throughout a run
@@ -12,10 +13,11 @@ using UnityEngine;
 
 public class GameStatsManager : MonoBehaviour
 {
-    public static GameStatsManager Instance { get; private set; }
-    public int EnemiesKilled { get; private set; }
-    public int MoneySpent { get; private set; }
-    public int WaveReached { get; private set; }
+    public static GameStatsManager Instance;
+    public int EnemiesKilled;
+    public int MoneySpent;
+    public int WaveReached;
+    public int currentLevel; 
 
     #region Unity Lifecycle
 
@@ -36,6 +38,49 @@ public class GameStatsManager : MonoBehaviour
 
     #endregion
 
+    //to do - have it work even if scene is named differently
+    private void Start()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName.StartsWith("Level"))
+        {
+            string numberPart = sceneName.Substring(5); // remove "Level"
+
+            if (int.TryParse(numberPart, out int levelNumber))
+            {
+                currentLevel = levelNumber;
+            }
+            else
+            {
+                Debug.LogError("Failed to parse level number from scene name: " + sceneName);
+            }
+        }
+    }
+
+    // Optional auto-save when game is paused, loses focus, or quits
+    // Loses focus means when the player clicks away from the game window or opens another application, etc.
+    void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SaveSystem.Save();
+        }
+    }
+
+    void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            SaveSystem.Save();
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        SaveSystem.Save();
+    }
+    
     #region Public API
 
     /// <summary>
@@ -75,4 +120,32 @@ public class GameStatsManager : MonoBehaviour
     }
 
     #endregion
+
+    #region Save/Load Functionality
+    public void SaveStats(ref GameStatsSaveData saveData)
+    {
+        saveData.EnemiesKilled = EnemiesKilled;
+        saveData.MoneySpent = MoneySpent;
+        saveData.WaveReached = WaveReached;
+        saveData.currentLevel = currentLevel;
+    }
+
+    public void LoadStats(GameStatsSaveData saveData)
+    {
+        EnemiesKilled = saveData.EnemiesKilled;
+        MoneySpent = saveData.MoneySpent;
+        WaveReached = saveData.WaveReached;
+        currentLevel = saveData.currentLevel;
+    }
+
+    #endregion
+}
+
+[System.Serializable]
+public struct GameStatsSaveData
+{
+    public int EnemiesKilled;
+    public int MoneySpent;
+    public int WaveReached;
+    public int currentLevel;
 }

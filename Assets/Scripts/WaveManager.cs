@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance;
     public List<WaveData> allWaves;
-    
+
     public GameObject wateringHoleObject;
 
     private Dictionary<Direction, List<EnemySpawnScript>> spawnGroups = new();
@@ -38,14 +38,17 @@ public class WaveManager : MonoBehaviour
     {
         while (currentWaveIndex < allWaves.Count)
         {
-            await SpawnWave(allWaves[currentWaveIndex]);
+            WaveData currentWave = allWaves[currentWaveIndex];
+
+            await SpawnWave(currentWave);
 
             while (activeEnemies > 0)
             {
                 await Awaitable.NextFrameAsync();
             }
 
-            await Awaitable.WaitForSecondsAsync(allWaves[currentWaveIndex].timeBeforeNextWave);
+            AwardPermanentCurrency(currentWave);
+            await Awaitable.WaitForSecondsAsync(currentWave.timeBeforeNextWave);
 
             currentWaveIndex++;
         }
@@ -64,8 +67,8 @@ public class WaveManager : MonoBehaviour
         {
             EnemySpawnScript spawnPoint = GetRandomSpawnPoint(info.direction);
             GameObject enemy = Instantiate(info.enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
-            EnemyMovementScript movementStats = enemy.GetComponent<EnemyMovementScript>();
-            movementStats.wateringHole = wateringHoleObject;
+            //EnemyMovementScript movementStats = enemy.GetComponent<EnemyMovementScript>();
+            //movementStats.wateringHole = wateringHoleObject;
             activeEnemies++;
 
             enemy.GetComponent<EnemyHealth>().OnDeath += () => activeEnemies--;
@@ -88,5 +91,15 @@ public class WaveManager : MonoBehaviour
     {
         EnemySpawnScript selected = spawnGroups[direction][UnityEngine.Random.Range(0, spawnGroups[direction].Count)];
         return selected;
+    }
+
+    void AwardPermanentCurrency(WaveData wave)
+    {
+        if (wave == null || wave.permanentCurrencyReward <= 0)
+        {
+            return;
+        }
+
+        PermanentCurrencyManager.Instance.AddPermanentCurrency(wave.permanentCurrencyReward);
     }
 }
