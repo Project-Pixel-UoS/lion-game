@@ -4,18 +4,18 @@ public class FruitTreeLifeCycle : MonoBehaviour
 {
     private GameObject placementManager;
     private PlacementManager placementManagerScript;
-    public float lifetime;
+    public float lifetime; // The full lifetime of the tree until it starts to die
     public float growingInterval; // The time between each fruit being created
     public float overripeTime; // Time until the tree becomes overripe
-    private float lifeTimer;
-    private float growingTimer;
-    private float overripeTimer;
-    private float removeTreeTimer; // Timer to wait a bit until the player can remove the tree
-    private int fruit;
+    private float lifeTimer; // Timer to track lifetime of tree
+    private float growingTimer; // Timer to track time between fruit growing
+    private float overripeTimer; // Timer to track time between last fruit being created and tree dying
+    private float removeTreeTimer; // Timer to wait a bit once tree is placed so it doesn't delete instantly
+    private int fruit; // Fruit produced by the tree
 
     void Start()
     {
-        placementManager = GameObject.Find("PlacementManager"); // I had trouble with assigning object in inspector so this will have to do...
+        placementManager = PlacementManager.Instance.gameObject;
         placementManagerScript = placementManager.GetComponent<PlacementManager>();
     }
 
@@ -24,6 +24,8 @@ public class FruitTreeLifeCycle : MonoBehaviour
         lifeTimer += Time.deltaTime;
         growingTimer += Time.deltaTime;
         removeTreeTimer += Time.deltaTime;
+
+        // Grow fruit until tree has hit its lifetime
         if (lifeTimer < lifetime)
         {
             if (growingTimer >= growingInterval)
@@ -32,7 +34,7 @@ public class FruitTreeLifeCycle : MonoBehaviour
                 this.fruit += 1;
             }
         }
-        else
+        else // Wait a bit until tree dies
         {
             overripeTimer += Time.deltaTime;
             if (overripeTimer >= overripeTime)
@@ -43,6 +45,7 @@ public class FruitTreeLifeCycle : MonoBehaviour
 
         if (removeTreeTimer >= growingInterval)
         {
+            // Harvest tree by left-clicking on it
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

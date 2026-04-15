@@ -264,10 +264,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8800449923111488941}
   - component: {fileID: 6535651987042723786}
-  - component: {fileID: 4070051645571815608}
   - component: {fileID: -4794856783628736413}
   - component: {fileID: -581054899965842350}
   - component: {fileID: 1536794481959004858}
+  - component: {fileID: -6247100080883785586}
   m_Layer: 0
   m_Name: Fruit Tree
   m_TagString: Untagged
@@ -350,21 +350,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4070051645571815608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5148432056765847449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d47db242def244bb5120e3f701c954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 5234793364847426620}
-  maxHealth: 5
-  currentHealth: 0
 --- !u!114 &-4794856783628736413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +414,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlacementCost
   fruitCost: 1
+--- !u!114 &-6247100080883785586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148432056765847449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d47db242def244bb5120e3f701c954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBarBehaviour
+  healthBar: {fileID: 0}
+  maxHealth: 5
+  currentHealth: 0
 --- !u!1 &6621853650924837467
 GameObject:
   m_ObjectHideFlags: 0

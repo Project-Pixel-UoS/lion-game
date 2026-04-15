@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfaa8a56faa9524795151761c17756d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fruitCost: 10
+  fruitCost: 5
 --- !u!1 &6621853650924837467
 GameObject:
   m_ObjectHideFlags: 0
