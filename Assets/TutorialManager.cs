@@ -1,5 +1,5 @@
 using UnityEngine;
-using Unityengine.UI;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class TutorialManager : MonoBehaviour
@@ -15,8 +15,8 @@ public class TutorialManager : MonoBehaviour
 
     public int step = 0;
 
-    public HighlightCircle highlight;
-    public TutorialUI ui;
+    //public HighlightCircle highlight;
+    //public TutorialUI ui;
 
     public Transform fruitTile;
     public Transform lionTile;
