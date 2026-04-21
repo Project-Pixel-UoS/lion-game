@@ -47,7 +47,7 @@ public class WaveManager : MonoBehaviour
 
             while (activeEnemies > 0)
             {
-                progressBar.fillAmount = 1 - (numEnemiesInWave - eliminatedEnemiesCount) / numEnemiesInWave;
+                progressBar.fillAmount = 1 - (numEnemiesInWave - (float)eliminatedEnemiesCount) / numEnemiesInWave;
                 await Awaitable.NextFrameAsync();
             }
 
