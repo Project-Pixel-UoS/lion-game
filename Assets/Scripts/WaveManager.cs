@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using UnityEngine.UI;
 /// <summary>
 /// Holds the main logic for spawning new waves
 /// </summary>
@@ -16,7 +16,8 @@ public class WaveManager : MonoBehaviour
     private Dictionary<Direction, List<EnemySpawnScript>> spawnGroups = new();
     private int currentWaveIndex = 0;
     private int activeEnemies = 0;
-
+    private int eliminatedEnemiesCount = 0;
+    public Image progressBar;
 
     private void Awake()
     {
@@ -40,10 +41,13 @@ public class WaveManager : MonoBehaviour
         {
             WaveData currentWave = allWaves[currentWaveIndex];
 
+            int numEnemiesInWave = currentWave.enemiesInWave.Sum(item => item.count);
+            eliminatedEnemiesCount = 0;
             await SpawnWave(currentWave);
 
             while (activeEnemies > 0)
             {
+                progressBar.fillAmount = 1 - (numEnemiesInWave - eliminatedEnemiesCount) / numEnemiesInWave;
                 await Awaitable.NextFrameAsync();
             }
 
@@ -72,6 +76,7 @@ public class WaveManager : MonoBehaviour
             activeEnemies++;
 
             enemy.GetComponent<EnemyHealth>().OnDeath += () => activeEnemies--;
+            enemy.GetComponent<EnemyHealth>().OnDeath += () => eliminatedEnemiesCount++;
 
             await Awaitable.WaitForSecondsAsync(info.spawnRate);
         }
