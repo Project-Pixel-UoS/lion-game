@@ -16,8 +16,10 @@ public class InfoPanelBehaviour : MonoBehaviour
     public Image infoImageBox;
 
     public void ShowInfo()
-    {       infoPanel.SetActive(true);
+    {           
+        infoPanel.SetActive(true);
         BeginInfo();
+        Time.timeScale = 0f; // pause the game
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -78,6 +80,7 @@ public class InfoPanelBehaviour : MonoBehaviour
 
     void TweenHideInfo()
     {
+        Time.timeScale = 1f; // resume the game
         LeanTween.scale(infoPanel, Vector3.zero, 0.5f)
             .setEaseInBack()
             .setOnComplete(() => infoPanel.SetActive(false));
