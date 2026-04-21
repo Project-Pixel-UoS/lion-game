@@ -9,6 +9,8 @@ public class TutorialManager : MonoBehaviour
     {
         public string message;
         public Transform highlightTarget;
+        public GameObject[] includedObjects;
+        public bool pauseGame;
     }
 
     public TutorialStep[] steps;
@@ -21,9 +23,58 @@ public class TutorialManager : MonoBehaviour
     public Transform fruitTile;
     public Transform lionTile;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject Spotlight;
+    [SerializeField] private GameObject BannerText;
+
+
+    public void StartTutorial()
     {
-        
+        ActivateStep(0);
+    }
+
+    void ActivateStep(int stepIndex)
+    {
+        TutorialStep previousStep = null;
+
+        if (stepIndex != step && step >= 0 && step < steps.Length)
+        {
+            previousStep = steps[step];
+        }
+
+        step = stepIndex;
+        TutorialStep currentStep = steps[step];
+
+        // Disable objects from previous step that are NOT in the new step
+        if (previousStep != null)
+        {
+            foreach (GameObject obj in previousStep.includedObjects)
+            {
+                if (System.Array.IndexOf(currentStep.includedObjects, obj) == -1)
+                {
+                    obj.SetActive(false);
+                }
+            }
+        }
+
+        // Enable objects for current step
+        foreach (GameObject obj in currentStep.includedObjects)
+        {
+            obj.SetActive(true);
+        }
+
+        // Handle pause
+        Time.timeScale = currentStep.pauseGame ? 0f : 1f;
+    }
+
+    public void NextStep()
+    {
+        if (step < steps.Length - 1)
+        {
+            ActivateStep(step + 1);
+        }
+        else
+        {
+            // EndTutorial();
+        }
     }
 }
