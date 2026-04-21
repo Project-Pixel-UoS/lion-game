@@ -20,7 +20,7 @@ public class WaveManager : MonoBehaviour
     public Image progressBar;
 
     private int totalNumWaves;
-    public TMPro.TextMeshProUGUI waveStartText;
+    public TMPro.TextMeshProUGUI waveText;
 
     private void Awake()
     {
@@ -47,16 +47,19 @@ public class WaveManager : MonoBehaviour
 
             int numEnemiesInWave = currentWave.enemiesInWave.Sum(item => item.count);
             eliminatedEnemiesCount = 0;
+            await ShowWaveStartText();
+
             await SpawnWave(currentWave);
 
             while (activeEnemies > 0)
             {
-                progressBar.fillAmount = 1 - (numEnemiesInWave - (float)eliminatedEnemiesCount) / numEnemiesInWave;
+                progressBar.fillAmount = (float)eliminatedEnemiesCount / numEnemiesInWave;
                 await Awaitable.NextFrameAsync();
             }
 
             AwardPermanentCurrency(currentWave);
-            await Awaitable.WaitForSecondsAsync(currentWave.timeBeforeNextWave);
+
+            await ShowWaveEndCountdown(currentWave.timeBeforeNextWave);
 
             currentWaveIndex++;
         }
@@ -65,21 +68,37 @@ public class WaveManager : MonoBehaviour
 
     async Task SpawnWave(WaveData wave)
     {
-        ShowWaveStartText();
 
         List<Task> tasks = wave.enemiesInWave.Select(info => SpawnEnemy(info)).ToList();
         await Task.WhenAll(tasks);
     }
     
-    async void ShowWaveStartText()
+    async Task ShowWaveStartText()
     {
-        waveStartText.gameObject.SetActive(true);
-        waveStartText.text = $"Wave {currentWaveIndex + 1} / {totalNumWaves}";
+        waveText.text = $"Wave {currentWaveIndex + 1} / {totalNumWaves}";
+        waveText.gameObject.SetActive(true);
 
-        await Task.Delay(3000);
+        await Awaitable.WaitForSecondsAsync(3f);
 
-        waveStartText.gameObject.SetActive(false);
+        waveText.gameObject.SetActive(false);
     }
+
+    async Task ShowWaveEndCountdown(float seconds)
+    {
+        waveText.text = seconds.ToString();
+        waveText.gameObject.SetActive(true);
+
+        while (seconds > 0)
+        {
+            waveText.text = seconds.ToString();
+
+            await Awaitable.WaitForSecondsAsync(1f);
+            seconds--;
+        }
+        waveText.gameObject.SetActive(false);
+
+    }
+
     async Task SpawnEnemy(EnemySpawnInfo info)
     {
         for (int i = 0; i < info.count; i++)

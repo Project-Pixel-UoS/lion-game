@@ -1630,6 +1630,108 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &425927821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425927822}
+  - component: {fileID: 425927824}
+  - component: {fileID: 425927823}
+  m_Layer: 2
+  m_Name: EastLaneBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425927822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425927821}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.2898251, y: 0.605809, z: 0}
+  m_LocalScale: {x: 0.43862528, y: 2.1586814, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1201768413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425927823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425927821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbed6c48c0455746a80b3b180c443dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LaneTrigger
+  enemyCount: 0
+  TagList:
+  - Zig_Zag_Enemy
+  - Helmet_Enemy
+  - Boots_Enemy
+  - Enemy
+  laneDirection: {x: 5, y: 0, z: 0}
+--- !u!60 &425927824
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425927821}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5773587}
+      - {x: -0.5, y: -0.28866667}
+      - {x: 0.5, y: -0.28866667}
+  m_UseDelaunayMesh: 1
 --- !u!4 &438993445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4487247722745047995, guid: ca53f37fbeb42764e884c5e9b200a8a8, type: 3}
@@ -2752,11 +2854,9 @@ MonoBehaviour:
   allWaves:
   - {fileID: 11400000, guid: 6858999295495a344be5ebe566f741f5, type: 2}
   - {fileID: 11400000, guid: d0bcc419903a6ed41aac58430c0536a6, type: 2}
-  - {fileID: 11400000, guid: 7d49a51eda8ec85419327421835e86b6, type: 2}
-  - {fileID: 11400000, guid: 45c8628a1064edb4ea91c4d78600ae10, type: 2}
   wateringHoleObject: {fileID: 74227668}
   progressBar: {fileID: 1329394037}
-  waveStartText: {fileID: 1163832903}
+  waveText: {fileID: 1163832903}
 --- !u!224 &755502996
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3678,7 +3778,7 @@ GameObject:
   - component: {fileID: 1163832904}
   - component: {fileID: 1163832903}
   m_Layer: 5
-  m_Name: Wave Start Text
+  m_Name: Wave Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3895,6 +3995,7 @@ Transform:
   - {fileID: 1455752806}
   - {fileID: 674840972}
   - {fileID: 1965882878}
+  - {fileID: 425927822}
   m_Father: {fileID: 942177618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -270}
 --- !u!212 &1201768414
@@ -4259,7 +4360,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

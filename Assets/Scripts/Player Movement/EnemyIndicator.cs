@@ -19,6 +19,7 @@ public class EnemyIndicator : MonoBehaviour
 
         foreach (LaneTrigger lane in lanes)
         {
+            if (lane == null) { continue; }
             if (lane.enemyCount > 0)
             {
                 Vector3 dirToLane = lane.laneDirection.normalized;
