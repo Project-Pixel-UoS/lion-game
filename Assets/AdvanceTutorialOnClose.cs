@@ -5,7 +5,7 @@ public class AdvanceTutorialOnClose : MonoBehaviour
     [SerializeField] private TutorialManager tutorialManager;
 
     // Call this from your close button
-    public void OnClose()
+    public void OnDisable()
     {
         // Advance tutorial
         if (tutorialManager != null)
