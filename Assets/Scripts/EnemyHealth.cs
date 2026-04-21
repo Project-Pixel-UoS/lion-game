@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    [ContextMenu("Test Death")]
     public void Die() {
         OnDeath?.Invoke();
         Destroy(gameObject);

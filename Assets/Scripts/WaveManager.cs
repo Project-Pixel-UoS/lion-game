@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using UnityEngine.UI;
 /// <summary>
 /// Holds the main logic for spawning new waves
 /// </summary>
@@ -16,7 +16,11 @@ public class WaveManager : MonoBehaviour
     private Dictionary<Direction, List<EnemySpawnScript>> spawnGroups = new();
     private int currentWaveIndex = 0;
     private int activeEnemies = 0;
+    private int eliminatedEnemiesCount = 0;
+    public Image progressBar;
 
+    private int totalNumWaves;
+    public TMPro.TextMeshProUGUI waveText;
 
     private void Awake()
     {
@@ -30,6 +34,7 @@ public class WaveManager : MonoBehaviour
     }
     async void Start()
     {
+        totalNumWaves = allWaves.Count;
         await Awaitable.NextFrameAsync();
         await GameLoop();
     }
@@ -40,15 +45,21 @@ public class WaveManager : MonoBehaviour
         {
             WaveData currentWave = allWaves[currentWaveIndex];
 
+            int numEnemiesInWave = currentWave.enemiesInWave.Sum(item => item.count);
+            eliminatedEnemiesCount = 0;
+            await ShowWaveStartText();
+
             await SpawnWave(currentWave);
 
             while (activeEnemies > 0)
             {
+                progressBar.fillAmount = (float)eliminatedEnemiesCount / numEnemiesInWave;
                 await Awaitable.NextFrameAsync();
             }
 
             AwardPermanentCurrency(currentWave);
-            await Awaitable.WaitForSecondsAsync(currentWave.timeBeforeNextWave);
+
+            await ShowWaveEndCountdown(currentWave.timeBeforeNextWave);
 
             currentWaveIndex++;
         }
@@ -57,10 +68,37 @@ public class WaveManager : MonoBehaviour
 
     async Task SpawnWave(WaveData wave)
     {
+
         List<Task> tasks = wave.enemiesInWave.Select(info => SpawnEnemy(info)).ToList();
         await Task.WhenAll(tasks);
     }
     
+    async Task ShowWaveStartText()
+    {
+        waveText.text = $"Wave {currentWaveIndex + 1} / {totalNumWaves}";
+        waveText.gameObject.SetActive(true);
+
+        await Awaitable.WaitForSecondsAsync(3f);
+
+        waveText.gameObject.SetActive(false);
+    }
+
+    async Task ShowWaveEndCountdown(float seconds)
+    {
+        waveText.text = seconds.ToString();
+        waveText.gameObject.SetActive(true);
+
+        while (seconds > 0)
+        {
+            waveText.text = seconds.ToString();
+
+            await Awaitable.WaitForSecondsAsync(1f);
+            seconds--;
+        }
+        waveText.gameObject.SetActive(false);
+
+    }
+
     async Task SpawnEnemy(EnemySpawnInfo info)
     {
         for (int i = 0; i < info.count; i++)
@@ -72,6 +110,7 @@ public class WaveManager : MonoBehaviour
             activeEnemies++;
 
             enemy.GetComponent<EnemyHealth>().OnDeath += () => activeEnemies--;
+            enemy.GetComponent<EnemyHealth>().OnDeath += () => eliminatedEnemiesCount++;
 
             await Awaitable.WaitForSecondsAsync(info.spawnRate);
         }
