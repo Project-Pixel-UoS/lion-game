@@ -19,6 +19,9 @@ public class WaveManager : MonoBehaviour
     private int eliminatedEnemiesCount = 0;
     public Image progressBar;
 
+    private int totalNumWaves;
+    public TMPro.TextMeshProUGUI waveStartText;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,6 +34,7 @@ public class WaveManager : MonoBehaviour
     }
     async void Start()
     {
+        totalNumWaves = allWaves.Count;
         await Awaitable.NextFrameAsync();
         await GameLoop();
     }
@@ -61,10 +65,21 @@ public class WaveManager : MonoBehaviour
 
     async Task SpawnWave(WaveData wave)
     {
+        ShowWaveStartText();
+
         List<Task> tasks = wave.enemiesInWave.Select(info => SpawnEnemy(info)).ToList();
         await Task.WhenAll(tasks);
     }
     
+    async void ShowWaveStartText()
+    {
+        waveStartText.gameObject.SetActive(true);
+        waveStartText.text = $"Wave {currentWaveIndex + 1} / {totalNumWaves}";
+
+        await Task.Delay(3000);
+
+        waveStartText.gameObject.SetActive(false);
+    }
     async Task SpawnEnemy(EnemySpawnInfo info)
     {
         for (int i = 0; i < info.count; i++)
