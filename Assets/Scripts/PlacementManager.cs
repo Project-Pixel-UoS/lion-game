@@ -19,6 +19,7 @@ public enum DeploymentMenuType
 
 public class PlacementManager : MonoBehaviour
 {
+    public Camera camera;
     //Creates Instance for Singleton
     public static PlacementManager Instance; 
 
@@ -58,6 +59,10 @@ public class PlacementManager : MonoBehaviour
 
     public void OpenDeploymentMenu() //Opens the Deployment Menu and closes the Placement Prompt Panel and Cancel Button
     {
+        if (camera.orthographicSize > 6)
+        {
+            return;
+        }
         Debug.Log("Opening Deployment Menu");
         deploymentMenuPanel.SetActive(true); //Open the Deployment Menu Panel
         

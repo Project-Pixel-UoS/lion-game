@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 112320169}
   - component: {fileID: 112320172}
   - component: {fileID: 112320173}
+  - component: {fileID: 112320174}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -462,6 +463,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 127
   m_MaxRayIntersections: 0
+--- !u!114 &112320174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112320168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6b4b0eee866534cbb20b19f1032859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelZooming
+  isLevel: 1
+  camera: {fileID: 112320170}
 --- !u!1 &139276223
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47be61d2bf0d340a01a5504dc0c18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 112320170}
   currentMenu: 0
   selectedLion: {fileID: 0}
   currentTile: {fileID: 0}
@@ -1717,6 +1733,7 @@ RectTransform:
   m_Children:
   - {fileID: 712101742}
   - {fileID: 1635042847}
+  - {fileID: 469749931}
   m_Father: {fileID: 1750771257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1809,6 +1826,7 @@ MonoBehaviour:
   - {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
   - {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
   - {fileID: 1708962377896711185, guid: 54377dea0bc75c740a5a3f4f8a4710e1, type: 3}
+  noLionsMessage: {fileID: 0}
 --- !u!1 &942177617
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,3 +4242,4 @@ SceneRoots:
   - {fileID: 571573221}
   - {fileID: 755502996}
   - {fileID: 679617926}
+  - {fileID: 519231174}
