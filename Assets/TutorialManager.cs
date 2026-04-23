@@ -84,9 +84,14 @@ public class TutorialManager : MonoBehaviour
             // EndTutorial();
         }
 
-        if (step == 2 || step == 4)
+        if (step == 2 || step == 4 || step == 6)
         {
             StartCoroutine(WaitAndAdvance());
+        }
+
+        if (step == 8)
+        {
+            Camera.main.GetComponent<OrbitCamera>().enabled = true;
         }
     }
 }

@@ -4,11 +4,11 @@ public class AdvanceTutorialOnClose : MonoBehaviour
 {
     [SerializeField] private TutorialManager tutorialManager;
 
-    // Call this from your close button
+    [SerializeField] private int[] tutorialAdvanceSteps; // The tutorial step to advance to when this object is clicked
     public void OnDisable()
     {
         // Advance tutorial
-        if (tutorialManager != null)
+        if (tutorialManager != null && System.Array.IndexOf(tutorialAdvanceSteps, tutorialManager.step) != -1)
         {
             tutorialManager.NextStep();
         }
