@@ -5159,13 +5159,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818481871}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1610716078}
-  m_Father: {fileID: 1750771257}
+  m_Father: {fileID: 1212110730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7707,6 +7707,8 @@ RectTransform:
   - {fileID: 497060144}
   - {fileID: 1793878883}
   - {fileID: 484572936}
+  - {fileID: 1907022982}
+  - {fileID: 818481872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11081,7 +11083,8 @@ MonoBehaviour:
   buttonPrefab: {fileID: 800629011751283846, guid: 8caf2d8859bda3f4aa3b531b0f75479b, type: 3}
   lionPrefabs:
   - {fileID: 5148432056765847449, guid: 45eee04969d29ed4d832187dbcd5afac, type: 3}
-  energyPrefabs: []
+  energyPrefabs:
+  - {fileID: 0}
 --- !u!114 &1666832716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11732,8 +11735,6 @@ RectTransform:
   - {fileID: 1782969888}
   - {fileID: 40333934}
   - {fileID: 1935481925}
-  - {fileID: 1907022982}
-  - {fileID: 818481872}
   - {fileID: 1946718513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12829,8 +12830,25 @@ MonoBehaviour:
     pauseGame: 0
   - message: 
     highlightTarget: {fileID: 0}
-    includedObjects: []
+    includedObjects:
+    - {fileID: 1044004361}
+    - {fileID: 497060143}
     pauseGame: 1
+  - message: 
+    highlightTarget: {fileID: 0}
+    includedObjects:
+    - {fileID: 1793878882}
+    pauseGame: 0
+  - message: 
+    highlightTarget: {fileID: 0}
+    includedObjects:
+    - {fileID: 1044004361}
+    - {fileID: 484572935}
+    pauseGame: 1
+  - message: 
+    highlightTarget: {fileID: 0}
+    includedObjects: []
+    pauseGame: 0
   step: 0
   fruitTile: {fileID: 0}
   lionTile: {fileID: 0}
@@ -12893,13 +12911,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907022981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1585160429}
-  m_Father: {fileID: 1750771257}
+  m_Father: {fileID: 1212110730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

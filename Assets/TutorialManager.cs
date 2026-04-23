@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
 public class TutorialManager : MonoBehaviour
@@ -30,6 +31,12 @@ public class TutorialManager : MonoBehaviour
     public void StartTutorial()
     {
         ActivateStep(0);
+    }
+
+    IEnumerator WaitAndAdvance(float waitTime = 5f)
+    {
+        yield return new WaitForSeconds(waitTime);
+        NextStep();
     }
 
     void ActivateStep(int stepIndex)
@@ -75,6 +82,11 @@ public class TutorialManager : MonoBehaviour
         else
         {
             // EndTutorial();
+        }
+
+        if (step == 2 || step == 4)
+        {
+            StartCoroutine(WaitAndAdvance());
         }
     }
 }
